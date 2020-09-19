@@ -1,51 +1,51 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Credentials } from '../models/credentials.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthenticationService {
+  private user: User;
 
-    private user: User;
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {
+  public get currentUser(): User {
+    return this.user;
+  }
 
-    }
+  login(credentials: Credentials) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+    const params = new HttpParams({ fromObject: credentials as any });
 
-    public get currentUser(): User {
-        return this.user;
-    }
+    return this.http
+      .post<any>(`/auth/login`, params.toString(), { headers })
+      .pipe(
+        map(() => {
+          let user = { username: credentials.username, roles: [] };
+          this.user = user as any;
+          return user;
+        })
+      );
+  }
 
-    login(credentials: Credentials) {
-        const headers = new HttpHeaders({
-          'Content-Type': 'application/x-www-form-urlencoded'
-        });
-        const params = new HttpParams({ fromObject: credentials as any });
+  logout() {
+    this.user = null;
+  }
 
-        return this.http.post<any>(`/auth/login`, params.toString(), { headers })
-            .pipe(map(() => {
-                let user = {username: credentials.username, roles: []};
-                this.user = user as any;
-                return user;
-            }));
-    }
+  public isAdmin() {
+    return this.user.roles.includes('admin');
+  }
 
-    logout() {
-        this.user = null;
-    }
+  public isCustomer() {
+    return this.user.roles.includes('customer');
+  }
 
-    public isAdmin() {
-        return this.user.roles.includes("admin");
-    }
-
-    public isCustomer() {
-        return this.user.roles.includes("customer");
-    }
-
-    public get isLogged() {
-        return this.user != null;
-    }
+  public get isLogged() {
+    return this.user != null;
+  }
 }
