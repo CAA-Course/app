@@ -15,5 +15,5 @@
 log/
 target/
 
-src/main/resources/public/*
-!src/main/resources/public/.gitkeep
+src/main/resources/static/*
+!src/main/resources/static/.gitkeep
