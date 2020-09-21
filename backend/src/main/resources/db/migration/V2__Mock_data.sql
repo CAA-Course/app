@@ -30,8 +30,8 @@ insert into product_category (id, name, description) values (8, 'hac habitasse',
 insert into product_category (id, name, description) values (9, 'quis augue', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.');
 insert into product_category (id, name, description) values (10, 'diam', 'Integer ac leo.');
 
-insert into customer (id, first_name, last_name, username, password, email_address) values (1, 'Tanhya', 'Sapp', 'tsapp0', 'uO8AQIU', 'tsapp0@altervista.org');
-insert into customer (id, first_name, last_name, username, password, email_address) values (2, 'Kathy', 'Birdsey', 'kbirdsey1', 'NZkhY19bmfM9', 'kbirdsey1@issuu.com');
+insert into customer (id, first_name, last_name, username, password, email_address) values (1, 'Tanhya', 'Sapp', 'user', '$2y$04$ZZRLd8DHmGz6gZSl8SQuXeHoCc2xk0OQ/gl7.DppV1HEeL.gx.1N2'/* Decrypted: password */, 'tsapp0@altervista.org');
+insert into customer (id, first_name, last_name, username, password, email_address) values (2, 'Kathy', 'Birdsey', 'user2', '{noop}user2', 'kbirdsey1@issuu.com');
 insert into customer (id, first_name, last_name, username, password, email_address) values (3, 'Lief', 'Hagan', 'lhagan2', 'g2a92orN2npG', 'lhagan2@patch.com');
 insert into customer (id, first_name, last_name, username, password, email_address) values (4, 'Dulcea', 'Doncaster', 'ddoncaster3', 'ZnZLge2u', 'ddoncaster3@odnoklassniki.ru');
 insert into customer (id, first_name, last_name, username, password, email_address) values (5, 'Mufi', 'Weathers', 'mweathers4', 'ZBbAIg', 'mweathers4@people.com.cn');
