@@ -10,8 +10,8 @@
 
 1. Build the Frontend: Run `npm install` && `npm run build` in the `frontend` folder.
 2. Build the Backend: Run `mvn clean package` in the backend folder.
-3. Run the JAR:
-`java -DPOSTGRES_HOST={POSTGRES_HOST} -DPOSTGRES_PORT={POSTGRES_PORT} -DPOSTGRES_USER={POSTGRES_USER} -DPOSTGRES_PASSWORD={POSTGRES_PASSWORD} -jar shop-0.0.1-SNAPSHOT.jar`
+3. Run the JAR created in the `target` folder.
+`java -Dspring.profiles.active=with-form -DPOSTGRES_HOST={POSTGRES_HOST} -DPOSTGRES_PORT={POSTGRES_PORT} -DPOSTGRES_USER={POSTGRES_USER} -DPOSTGRES_PASSWORD={POSTGRES_PASSWORD} -jar shop-0.0.1-SNAPSHOT.jar`
 
 `POSTGRES_HOST`: IP of the server running the postgres service.
 
