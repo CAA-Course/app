@@ -9,5 +9,5 @@ export interface AuthState {
 export const initialAuthState: AuthState = {
   isAuthenticated: false,
   user: null,
-  errorMessage: null
+  errorMessage: null,
 };

@@ -22,13 +22,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-  security:
-    oauth2:
-      resourceserver:
-        #        userInfoUri: https://caacourse-test.auth.eu-west-1.amazoncognito.com/oauth2/userInfo
-        #        tokenInfoUri: https://caacourse-test.auth.eu-west-1.amazoncognito.com/oauth2/token
-        jwt:
-          jwk-set-uri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_LBgyq455E/.well-known/jwks.json
+#  security:
+#    oauth2:
+#      resourceserver:
+#        #        userInfoUri: https://caacourse-test.auth.eu-west-1.amazoncognito.com/oauth2/userInfo
+#        #        tokenInfoUri: https://caacourse-test.auth.eu-west-1.amazoncognito.com/oauth2/token
+#        jwt:
+#          jwk-set-uri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_LBgyq455E/.well-known/jwks.json
 
 
 # Strategy Pattern -> possible values are 'single location', 'most abundant' and 'proximity'

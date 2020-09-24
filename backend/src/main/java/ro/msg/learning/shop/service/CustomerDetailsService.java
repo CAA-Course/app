@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ro.msg.learning.shop.entity.Customer;
+import ro.msg.learning.shop.model.CustomUser;
 import ro.msg.learning.shop.repository.CustomerRepository;
 
 import java.util.ArrayList;
@@ -21,12 +22,12 @@ public class CustomerDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        Customer user = customerRepository.findCustomerByUsername(username)
-                                          .orElseThrow(
-                                                  () -> new UsernameNotFoundException(
-                                                          "Unknown user"));
-        return new User(user.getUsername(), user.getPassword(),
-                        getGrantedAuthorities());
+        Customer customer = customerRepository.findCustomerByUsername(username)
+                                              .orElseThrow(
+                                                      () -> new UsernameNotFoundException(
+                                                              "Unknown user"));
+
+        return new CustomUser(customer, getGrantedAuthorities());
     }
 
     private Collection<GrantedAuthority> getGrantedAuthorities() {

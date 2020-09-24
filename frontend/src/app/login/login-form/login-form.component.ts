@@ -4,18 +4,16 @@ import { Credentials } from 'src/app/core/models/credentials.model';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent implements OnInit {
-
-  @Output() login = new EventEmitter()
+  @Output() login = new EventEmitter();
   @Input() error: string;
   credentials: Credentials;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.credentials = new Credentials();
   }
-
 }

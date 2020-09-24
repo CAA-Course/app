@@ -18,7 +18,6 @@ public class CustomerDTO {
     private String emailAddress;
     private List<OrderDTO> orders = new ArrayList<>();
 
-
     public static CustomerDTO ofEntity(Customer customer) {
 
         CustomerDTO customerDTO = new CustomerDTO();
@@ -30,9 +29,10 @@ public class CustomerDTO {
         customerDTO.setUsername(customer.getUsername());
         customerDTO.setPassword(customer.getPassword());
 
-        if(customer.getOrders() != null) {
-            for (Order order: customer.getOrders()) {
-                customerDTO.getOrders().add(OrderDTO.ofEntity(order));
+        if (customer.getOrders() != null) {
+            for (Order order : customer.getOrders()) {
+                customerDTO.getOrders()
+                           .add(OrderDTO.ofEntity(order));
             }
         }
 

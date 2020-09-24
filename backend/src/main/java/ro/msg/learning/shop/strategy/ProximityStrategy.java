@@ -36,7 +36,7 @@ public class ProximityStrategy implements StrategyInterface {
     public List<LocationStrategyModel> getLocations(OrderProductQuantityDTO order) {
 
         List<Location> closestLocations = getSortedLocations(order);
-        int numberOfOrders = order.getProductAndQuantityDTOList().size();
+        int numberOfOrders = order.getProducts().size();
         List<LocationStrategyModel> proximityLocations = new ArrayList<>();
 
         for (Location location : closestLocations) {
@@ -46,20 +46,20 @@ public class ProximityStrategy implements StrategyInterface {
 
             stocks.forEach(stock -> {
                         List<ProductAndQuantityDTO> productsFound = new ArrayList<>();
-                        order.getProductAndQuantityDTOList().forEach(o -> {
-                                    if (o.getProductId().equals(stock.getStockId().getProductId()) &&
-                                            stock.getQuantity() >= o.getProductQuantity()
+                        order.getProducts().forEach(o -> {
+                                    if (o.getId().equals(stock.getStockId().getProductId()) &&
+                                            stock.getQuantity() >= o.getQuantity()
                                     ) {
-                                        productRepository.findById(o.getProductId()).ifPresent(orderProduct -> {
-                                                    proximityLocation[0] = new LocationStrategyModel(location, orderProduct, o.getProductQuantity());
+                                        productRepository.findById(o.getId()).ifPresent(orderProduct -> {
+                                                    proximityLocation[0] = new LocationStrategyModel(location, orderProduct, o.getQuantity());
                                                     proximityLocations.add(proximityLocation[0]);
                                                     productsFound.add(o);
                                                 }
-                                        );
+                                                                                       );
                                     }
                                 }
-                        );
-                        order.getProductAndQuantityDTOList().removeAll(productsFound);
+                                                   );
+                        order.getProducts().removeAll(productsFound);
                     }
             );
         }

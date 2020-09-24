@@ -6,15 +6,16 @@ import ro.msg.learning.shop.entity.OrderDetail;
 @Data
 public class ProductAndQuantityDTO {
 
-    private Integer productId;
-    private Integer productQuantity;
+    private Integer id;
+    private Integer quantity;
 
-    public static ProductAndQuantityDTO ofEntity(OrderDetail orderDetail){
+    public static ProductAndQuantityDTO ofEntity(OrderDetail orderDetail) {
 
         ProductAndQuantityDTO productAndQuantityDTO = new ProductAndQuantityDTO();
 
-        productAndQuantityDTO.setProductId(orderDetail.getOrderDetailId().getProductId());
-        productAndQuantityDTO.setProductQuantity(orderDetail.getQuantity());
+        productAndQuantityDTO.setId(orderDetail.getOrderDetailId()
+                                               .getProductId());
+        productAndQuantityDTO.setQuantity(orderDetail.getQuantity());
 
         return productAndQuantityDTO;
     }

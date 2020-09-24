@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import * as $ from 'jquery';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -25,7 +23,16 @@ import { OrderService } from './core/services/order.service';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDividerModule, MatProgressSpinnerModule, MatCardModule } from '@angular/material';
+import {
+  MatInputModule,
+  MatButtonModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatDividerModule,
+  MatProgressSpinnerModule,
+  MatCardModule,
+} from '@angular/material';
 import { ProductListMenuComponent } from './product-list/product-list-menu/product-list-menu.component';
 import { CartEmptyWarningComponent } from './cart/cart-empty-warning/cart-empty-warning.component';
 import { CartMenuComponent } from './cart/cart-menu/cart-menu.component';
@@ -35,7 +42,6 @@ import { AuthEffects } from './store/effects/auth.effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/app.states';
 import { ProductEffects } from './store/effects/product.effects';
-
 
 @NgModule({
   declarations: [
@@ -56,7 +62,7 @@ import { ProductEffects } from './store/effects/product.effects';
     ProductListMenuComponent,
     CartEmptyWarningComponent,
     CartMenuComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,9 +79,9 @@ import { ProductEffects } from './store/effects/product.effects';
     MatSortModule,
     MatDividerModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [ProductService, CartService, OrderService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

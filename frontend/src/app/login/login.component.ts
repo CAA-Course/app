@@ -8,7 +8,7 @@ import { AuthState } from '../store/states/auth.states';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
   credentials: Credentials = new Credentials();
@@ -22,5 +22,4 @@ export class LoginComponent {
   login(credentials: Credentials): void {
     this.store.dispatch(new LogIn(credentials));
   }
-
 }

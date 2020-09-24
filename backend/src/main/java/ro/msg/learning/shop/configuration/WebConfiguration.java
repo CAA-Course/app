@@ -7,7 +7,6 @@ import ro.msg.learning.shop.converter.ConverterCSV;
 
 import java.util.List;
 
-
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
     @Override

@@ -8,13 +8,13 @@ export function reducer(state = initialAuthState, action: All): AuthState {
         ...state,
         isAuthenticated: true,
         user: action.payload.user,
-        errorMessage: null
+        errorMessage: null,
       };
     }
     case AuthActionTypes.LOGIN_FAILURE: {
       return {
         ...state,
-        errorMessage: 'Incorrect username and/or password.'
+        errorMessage: 'Incorrect username and/or password.',
       };
     }
     default: {

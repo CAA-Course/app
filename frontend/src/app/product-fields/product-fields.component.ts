@@ -4,16 +4,15 @@ import { Product } from '../core/models/product.model';
 @Component({
   selector: 'app-product-fields',
   templateUrl: './product-fields.component.html',
-  styleUrls: ['./product-fields.component.css']
+  styleUrls: ['./product-fields.component.css'],
 })
 export class ProductFieldsComponent {
   @Input() product: Product;
   @Output() saveProduct = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
   doSave() {
     this.saveProduct.emit(this.product);
   }
-
 }

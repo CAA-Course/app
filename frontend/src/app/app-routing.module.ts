@@ -9,21 +9,40 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
-
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent, canActivate: [AuthGuard] },
-  { path: 'product/:id', component: ProductDetailComponent, canActivate: [AuthGuard] },
-  { path: 'product/:id/edit', component: ProductEditComponent, canActivate: [AuthGuard], data: { role: "admin" } },
-  { path: 'products/new', component: ProductAddComponent, canActivate: [AuthGuard], data: { role: "admin" } },
-  { path: 'cart', component: CartComponent, canActivate: [AuthGuard], data: { role: "customer" } },
+  {
+    path: 'products',
+    component: ProductListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/:id',
+    component: ProductDetailComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/:id/edit',
+    component: ProductEditComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'products/new',
+    component: ProductAddComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: '404', component: PageNotFoundComponent },
-  { path: '**', redirectTo: '/404' }
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

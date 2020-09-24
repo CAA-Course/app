@@ -8,19 +8,19 @@ import { CreateProduct } from '../store/actions/product.actions';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
-  styleUrls: ['./product-add.component.css']
+  styleUrls: ['./product-add.component.css'],
 })
 export class ProductAddComponent {
-
   product: Product = new Product();
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
-    private store: Store<AppState>) { }
+    private store: Store<AppState>
+  ) {}
 
   saveProduct(product: Product) {
     this.store.dispatch(new CreateProduct(product));
     this.router.navigate(['..']);
   }
-
 }

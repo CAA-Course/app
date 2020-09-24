@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import ro.msg.learning.shop.model.CustomUser;
 import ro.msg.learning.shop.service.CustomerDetailsService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -30,24 +32,40 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         log.info("Using form based auth");
-        httpSecurity.csrf().disable()
-                .headers().frameOptions().disable().and()
-                .authorizeRequests()
-                .antMatchers("/api/**").authenticated()
-                .antMatchers("/**").permitAll()
-                .and()
-                .formLogin()
-                .loginProcessingUrl("/auth/login")
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .failureHandler((req, res, e) -> sendError(res, 401))
-                .successHandler((req, res, a) -> res.setStatus(200)).and()
-                .exceptionHandling()
-                .accessDeniedHandler((req, res, e) -> sendError(res, 403))
-                .authenticationEntryPoint((req, res, e) -> sendError(res, 401)).and()
-                .logout()
-                .logoutUrl("/auth/logout")
-                .logoutSuccessHandler((req, res, a) -> res.setStatus(200));
+        httpSecurity.csrf()
+                    .disable()
+                    .headers()
+                    .frameOptions()
+                    .disable()
+                    .and()
+                    .authorizeRequests()
+                    .antMatchers("/api/**")
+                    .authenticated()
+                    .antMatchers("/**")
+                    .permitAll()
+                    .and()
+                    .formLogin()
+                    .loginProcessingUrl("/auth/login")
+                    .usernameParameter("username")
+                    .passwordParameter("password")
+                    .failureHandler((req, res, e) -> sendError(res, 401))
+                    .successHandler((req, res, a) -> {
+                        res.setContentType("application/json");
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        res.getWriter()
+                           .write(objectMapper.writeValueAsString(
+                                   a.getPrincipal()));
+                        res.setStatus(200);
+                    })
+                    .and()
+                    .exceptionHandling()
+                    .accessDeniedHandler((req, res, e) -> sendError(res, 403))
+                    .authenticationEntryPoint(
+                            (req, res, e) -> sendError(res, 401))
+                    .and()
+                    .logout()
+                    .logoutUrl("/auth/logout")
+                    .logoutSuccessHandler((req, res, a) -> res.setStatus(200));
     }
 
     private void sendError(HttpServletResponse response, int code) {
@@ -62,14 +80,15 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
 
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customerDetailsService).passwordEncoder(passwordEncoder());
+    protected void configure(AuthenticationManagerBuilder auth)
+            throws Exception {
+        auth.userDetailsService(customerDetailsService)
+            .passwordEncoder(passwordEncoder());
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-        //return NoOpPasswordEncoder.getInstance();
     }
 
     @Override

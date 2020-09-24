@@ -10,16 +10,17 @@ import { getProducts } from '../store/selectors/product.selectors';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html'
+  templateUrl: './product-list.component.html',
 })
 export class ProductListComponent implements OnInit {
-
-  productHeaders: ProductHeader[] = []
+  productHeaders: ProductHeader[] = [];
   user$: Observable<AuthState>;
   products$: Observable<ProductHeader[] | null>;
 
-  constructor(private authenticationService: AuthenticationService,
-    private store: Store<AppState>) {
+  constructor(
+    private authenticationService: AuthenticationService,
+    private store: Store<AppState>
+  ) {
     this.user$ = this.store.select(selectAuthState);
     this.products$ = this.store.select(getProducts);
   }
@@ -27,5 +28,4 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetProducts());
   }
-
 }

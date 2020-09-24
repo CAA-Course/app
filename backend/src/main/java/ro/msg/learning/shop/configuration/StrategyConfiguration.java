@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.configuration;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import ro.msg.learning.shop.strategy.ProximityStrategy;
 import ro.msg.learning.shop.strategy.SingleLocationStrategy;
 import ro.msg.learning.shop.strategy.StrategyInterface;
 
+@Slf4j
 @Configuration
 public class StrategyConfiguration {
 
@@ -23,19 +25,27 @@ public class StrategyConfiguration {
     public StrategyInterface getStrategy(LocationRepository locationRepository,
                                          StockRepository stockRepository,
                                          ProductRepository productRepository,
-                                         RouteMatrixConfiguration routeMatrix) throws NoStrategyException {
+                                         RouteMatrixConfiguration routeMatrix) {
 
-        switch (strategy){
+        log.info("using " + strategy + " strategy");
+        switch (strategy) {
             case "single location":
-                return new SingleLocationStrategy(stockRepository, locationRepository, productRepository);
+                return new SingleLocationStrategy(stockRepository,
+                                                  locationRepository,
+                                                  productRepository);
 
             case "most abundant":
-                return new MostAbundantStrategy(locationRepository, stockRepository, productRepository);
+                return new MostAbundantStrategy(locationRepository,
+                                                stockRepository,
+                                                productRepository);
 
             case "proximity":
-                return new ProximityStrategy(routeMatrix, locationRepository, stockRepository, productRepository);
+                return new ProximityStrategy(routeMatrix, locationRepository,
+                                             stockRepository,
+                                             productRepository);
 
-            default: throw new NoStrategyException();
+            default:
+                throw new NoStrategyException();
         }
     }
 }

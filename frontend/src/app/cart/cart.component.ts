@@ -9,17 +9,19 @@ import 'bootstrap-notify';
 
 @Component({
   selector: 'app-cart',
-  templateUrl: './cart.component.html'
+  templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit {
-  cartItems: Map<number, CartItem>
+  cartItems: Map<number, CartItem>;
 
-  constructor(private cartService: CartService,
+  constructor(
+    private cartService: CartService,
     private authenticationService: AuthenticationService,
-    private orderService: OrderService) { }
+    private orderService: OrderService
+  ) {}
 
   ngOnInit() {
-    this.cartItems = this.cartService.getCartItems()
+    this.cartItems = this.cartService.getCartItems();
   }
 
   incrementQuantity(cartItem: CartItem) {
@@ -32,35 +34,45 @@ export class CartComponent implements OnInit {
 
   checkout() {
     if (this.cartService.isEmpty() == true) {
-      let customer: string = this.authenticationService.currentUser.username
-      let products = this.cartItems
-      let order: Order = { customer, products }
-      this.orderService.createOrder(order)
-        .subscribe(
-          data => {
-            this.cartService.clearCart();
-            $[`notify`]({
-              icon: "fa fa-info-circle",
-              title: "Order created!",
-              message: "You have successfully created an order!",
-            }, { type: "success", delay: 1000 });
-          },
-          error => {
-            $[`notify`]({
-              icon: "fa fa-info-circle",
-              title: "Order creation failed!",
-              message: "Order could not be created!",
-            }, { type: "danger", delay: 1000 });
-          });
-    }
-    else {
-      $[`notify`]({
-        icon: "fa fa-info-circle",
-        title: "Order creation failed!",
-        message: "You don't have any products in your cart!",
-      }, { type: "danger", delay: 1000 },
+      let order: Order = {
+        customerId: this.authenticationService.currentUser.id,
+        products: Array.from(this.cartItems.values()).map((p) => ({
+          id: p.product.id,
+          quantity: p.quantity,
+        })),
+      };
+      this.orderService.createOrder(order).subscribe(
+        (data) => {
+          this.cartService.clearCart();
+          $[`notify`](
+            {
+              icon: 'fa fa-info-circle',
+              title: 'Order created!',
+              message: 'You have successfully created an order!',
+            },
+            { type: 'success', delay: 1000 }
+          );
+        },
+        (error) => {
+          $[`notify`](
+            {
+              icon: 'fa fa-info-circle',
+              title: 'Order creation failed!',
+              message: 'Order could not be created!',
+            },
+            { type: 'danger', delay: 1000 }
+          );
+        }
+      );
+    } else {
+      $[`notify`](
+        {
+          icon: 'fa fa-info-circle',
+          title: 'Order creation failed!',
+          message: "You don't have any products in your cart!",
+        },
+        { type: 'danger', delay: 1000 }
       );
     }
   }
-
 }

@@ -9,28 +9,31 @@ import { getSelectedProduct } from '../store/selectors/product.selectors';
 
 @Component({
   selector: 'app-product-edit',
-  templateUrl: './product-edit.component.html'
+  templateUrl: './product-edit.component.html',
 })
 export class ProductEditComponent implements OnInit {
   product$: Observable<Product>;
   actualProduct: Product;
   id: number;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
-    private store: Store<AppState>) {
+    private store: Store<AppState>
+  ) {
     this.product$ = this.store.select(getSelectedProduct);
   }
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.store.dispatch(new GetProduct(this.id));
-    this.product$.subscribe((product: Product) => this.actualProduct = product);
+    this.product$.subscribe(
+      (product: Product) => (this.actualProduct = product)
+    );
   }
 
   saveProduct(product: Product) {
     this.store.dispatch(new UpdateProduct(product));
     this.router.navigate(['..']);
   }
-
 }

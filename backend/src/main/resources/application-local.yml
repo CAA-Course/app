@@ -24,4 +24,4 @@ spring:
       ddl-auto: none
 
 # Strategy Pattern -> possible values are 'single location', 'most abundant' and 'proximity'
-strategy: single location
+strategy: most abundant

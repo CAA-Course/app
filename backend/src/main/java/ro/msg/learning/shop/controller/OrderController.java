@@ -18,7 +18,8 @@ public class OrderController {
     private final OrderManagementService orderService;
 
     @PostMapping(value = "/api/orders")
-    public List<OrderDTO> createOrder(@AuthenticationPrincipal @RequestBody OrderProductQuantityDTO orderProductQuantityDTO){
+    public List<OrderDTO> createOrder(
+            @AuthenticationPrincipal @RequestBody OrderProductQuantityDTO orderProductQuantityDTO) {
 
         return orderService.saveOrders(orderProductQuantityDTO);
     }

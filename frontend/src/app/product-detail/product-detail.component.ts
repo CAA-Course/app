@@ -14,38 +14,48 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent implements OnInit {
   product$: Observable<Product>;
   id: number;
   actualProduct: Product;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
     private cartService: CartService,
-    private store: Store<AppState>) {
+    private store: Store<AppState>
+  ) {
     this.product$ = this.store.select(getSelectedProduct);
   }
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.store.dispatch(new GetProduct(this.id));
-    this.product$.subscribe((product: Product) => this.actualProduct = product);
+    this.product$.subscribe(
+      (product: Product) => (this.actualProduct = product)
+    );
   }
 
   deleteProduct() {
-    this.store.dispatch(new DeleteProduct(this.id))
+    this.store.dispatch(new DeleteProduct(this.id));
     this.router.navigateByUrl('/products');
   }
 
   addToCart() {
-    this.cartService.addProduct(this.actualProduct)
-    $[`notify`]({
-      icon: "fa fa-info-circle",
-      title: "Added to cart!",
-      message: "You have successfully added " + this.actualProduct.name + " to your shopping cart!",
-    }, { delay: 1000 });
+    this.cartService.addProduct(this.actualProduct);
+    $[`notify`](
+      {
+        icon: 'fa fa-info-circle',
+        title: 'Added to cart!',
+        message:
+          'You have successfully added ' +
+          this.actualProduct.name +
+          ' to your shopping cart!',
+      },
+      { delay: 1000 }
+    );
   }
 }

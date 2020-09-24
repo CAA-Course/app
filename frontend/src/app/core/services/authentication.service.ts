@@ -25,8 +25,14 @@ export class AuthenticationService {
     return this.http
       .post<any>(`/auth/login`, params.toString(), { headers })
       .pipe(
-        map(() => {
-          let user = { username: credentials.username, roles: [] };
+        map((authResult) => {
+          let user: User = {
+            username: authResult.username,
+            roles: [],
+            firstName: authResult.firstName,
+            id: authResult.id,
+            lastName: authResult.lastName,
+          };
           this.user = user as any;
           return user;
         })
@@ -38,11 +44,13 @@ export class AuthenticationService {
   }
 
   public isAdmin() {
-    return this.user.roles.includes('admin');
+    // return this.user.roles.includes('admin');
+    return true;
   }
 
   public isCustomer() {
-    return this.user.roles.includes('customer');
+    // return this.user.roles.includes('customer');
+    return true;
   }
 
   public get isLogged() {
