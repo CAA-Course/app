@@ -6,6 +6,7 @@ import ro.msg.learning.shop.dto.OrderDTO;
 import ro.msg.learning.shop.dto.OrderProductQuantityDTO;
 import ro.msg.learning.shop.entity.*;
 import ro.msg.learning.shop.exception.CustomerNotFoundException;
+import ro.msg.learning.shop.exception.InvalidOrderException;
 import ro.msg.learning.shop.model.LocationStrategyModel;
 import ro.msg.learning.shop.repository.*;
 import ro.msg.learning.shop.strategy.StrategyInterface;
@@ -23,7 +24,6 @@ public class OrderManagementService {
     private final StockRepository stockRepository;
     private final CustomerRepository customerRepository;
     private final OrderDetailRepository orderDetailRepository;
-    private final RevenueRepository revenueRepository;
 
     @Transactional
     public Order addOrder(OrderProductQuantityDTO orderProductQuantityDTO,
@@ -53,6 +53,11 @@ public class OrderManagementService {
     @Transactional
     public List<OrderDTO> saveOrders(
             OrderProductQuantityDTO orderProductQuantityDTO) {
+        if (orderProductQuantityDTO == null ||
+                orderProductQuantityDTO.getCustomerId() == null ||
+                orderProductQuantityDTO.getProducts().isEmpty()) {
+            throw new InvalidOrderException();
+        }
 
         Order order;
         List<OrderDTO> orders = new ArrayList<>();
@@ -63,10 +68,6 @@ public class OrderManagementService {
 
             Stock stock = stockRepository.findAll()
                                          .stream()
-                                         .filter(s -> s.getStockId()
-                                                       .getLocationId()
-                                                       .equals(locationStrategyModel.getLocation()
-                                                                                    .getId()))
                                          .filter(s -> s.getStockId()
                                                        .getProductId()
                                                        .equals(locationStrategyModel.getProduct()

@@ -31,17 +31,17 @@ public class LocationDTO {
         locationDTO.setAddressStreetAddress(location.getAddressStreetAddress());
         locationDTO.setName(location.getName());
 
-        if(location.getOrders() != null) {
-            for (Order order: location.getOrders()) {
-                locationDTO.getOrders().add(OrderDTO.ofEntity(order));
-            }
-        }
+//        if (location.getOrders() != null) {
+//            for (Order order : location.getOrders()) {
+//                locationDTO.getOrders().add(OrderDTO.ofEntity(order));
+//            }
+//        }
 
-        if(location.getRevenues() != null) {
-            for (Revenue revenue: location.getRevenues()) {
-                locationDTO.getRevenues().add(RevenueDTO.ofEntity(revenue));
-            }
-        }
+//        if (location.getRevenues() != null) {
+//            for (Revenue revenue : location.getRevenues()) {
+//                locationDTO.getRevenues().add(RevenueDTO.ofEntity(revenue));
+//            }
+//        }
 
         return locationDTO;
     }

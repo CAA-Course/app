@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProductHeader } from '../models/product-header.model';
 import { Product } from '../models/product.model';
+import { Category } from '../models/category.model';
+import { Supplier } from '../models/supplier.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +35,13 @@ export class ProductService {
 
   deleteProduct(id: number): Observable<{}> {
     return this.httpClient.delete(this.productURL + '/' + id);
+  }
+
+  getCategories(): Observable<Category[]> {
+    return this.httpClient.get<Category[]>(`/api/categories`);
+  }
+
+  getSuppliers(): Observable<Supplier[]> {
+    return this.httpClient.get<Supplier[]>(`/api/suppliers`);
   }
 }

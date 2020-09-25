@@ -12,11 +12,11 @@ public class OrderProductQuantityDTO {
 
     private Integer id;
     private Integer customerId;
-    private LocalDateTime createdAt;
-    private String addressCountry;
-    private String addressCity;
-    private String addressCounty;
-    private String addressStreetAddress;
+    private LocalDateTime createdAt = LocalDateTime.now();
+    private String addressCountry = "Romania";
+    private String addressCity = "Cluj-Napoca";
+    private String addressCounty = "Cluj";
+    private String addressStreetAddress = "1 Mihail Kogalniceanu";
     private List<ProductAndQuantityDTO> products = new ArrayList<>();
 
     public static OrderProductQuantityDTO ofEntity(Order order,
@@ -24,16 +24,16 @@ public class OrderProductQuantityDTO {
 
         OrderProductQuantityDTO orderProductQuantityDTO = new OrderProductQuantityDTO();
         orderProductQuantityDTO.setId(order.getId());
-        orderProductQuantityDTO.setAddressCity(order.getAddressCity());
-        orderProductQuantityDTO.setAddressCountry(order.getAddressCountry());
-        orderProductQuantityDTO.setAddressStreetAddress(
-                order.getAddressStreetAddress());
-        orderProductQuantityDTO.setAddressCounty(order.getAddressCounty());
+
+//        orderProductQuantityDTO.setAddressCity("Cluj-Napoca");
+//        orderProductQuantityDTO.setAddressCountry("Romania");
+//        orderProductQuantityDTO.setAddressStreetAddress("1");
+//        orderProductQuantityDTO.setAddressCounty("Cluj");
         orderProductQuantityDTO.setProducts(productAndQuantityDTOList);
         orderProductQuantityDTO.setCustomerId(order.getCustomer()
                                                    .getId());
 
-        orderProductQuantityDTO.setCreatedAt(LocalDateTime.now());
+//        orderProductQuantityDTO.setCreatedAt(LocalDateTime.now());
 
         return orderProductQuantityDTO;
     }

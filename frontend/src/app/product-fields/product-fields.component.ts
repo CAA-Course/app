@@ -1,5 +1,9 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Category } from '../core/models/category.model';
 import { Product } from '../core/models/product.model';
+import { Supplier } from '../core/models/supplier.model';
+import { ProductService } from '../core/services/product.service';
 
 @Component({
   selector: 'app-product-fields',
@@ -9,10 +13,18 @@ import { Product } from '../core/models/product.model';
 export class ProductFieldsComponent {
   @Input() product: Product;
   @Output() saveProduct = new EventEmitter();
+  categories$: Observable<Category[]>;
+  suppliers$: Observable<Supplier[]>;
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+    this.categories$ = this.productService.getCategories();
+    this.suppliers$ = this.productService.getSuppliers();
+  }
 
   doSave() {
+    console.log(this.product);
     this.saveProduct.emit(this.product);
   }
 }

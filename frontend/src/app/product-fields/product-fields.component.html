@@ -24,15 +24,33 @@
 
   <mat-form-field class="form-group">
     <mat-label for="category"><span i18n>Category</span></mat-label>
-    <input
-      matInput
-      type="text"
-      id="category"
-      required
-      [(ngModel)]="product.categoryName"
-      name="category"
-      #category="ngModel"
-    />
+    <mat-select [(ngModel)]="product.categoryId" #category="ngModel">
+      <mat-option>None</mat-option>
+      <mat-option
+        *ngFor="let category of categories$ | async"
+        [value]="category.id"
+      >
+        {{ category.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="category.invalid && (category.dirty || category.touched)">
+      <div *ngIf="category.errors.required">
+        <span i18n>Category is required.</span>
+      </div>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-group">
+    <mat-label for="category"><span i18n>Supplier</span></mat-label>
+    <mat-select [(ngModel)]="product.supplierId" #supplier="ngModel">
+      <mat-option>None</mat-option>
+      <mat-option
+        *ngFor="let supplier of suppliers$ | async"
+        [value]="supplier.id"
+      >
+        {{ supplier.name }}
+      </mat-option>
+    </mat-select>
     <mat-error *ngIf="category.invalid && (category.dirty || category.touched)">
       <div *ngIf="category.errors.required">
         <span i18n>Category is required.</span>
@@ -48,7 +66,7 @@
       id="image"
       required
       pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"
-      [(ngModel)]="product.image"
+      [(ngModel)]="product.imageUrl"
       name="image"
       #image="ngModel"
     />
@@ -84,6 +102,32 @@
       </div>
       <div *ngIf="price.errors.pattern">
         <span i18n>Price must be a number.</span>
+      </div>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-group">
+    <mat-label for="weight"><span i18n>Weight</span></mat-label>
+    <input
+      matInput
+      type="text"
+      id="weight"
+      required
+      min="0"
+      pattern="^[0-9]*$"
+      [(ngModel)]="product.weight"
+      name="weight"
+      #weight="ngModel"
+    />
+    <mat-error *ngIf="weight.invalid && (weight.dirty || weight.touched)">
+      <div *ngIf="weight.errors.required">
+        <span i18n>Weight is required.</span>
+      </div>
+      <div *ngIf="weight.errors.min">
+        <span i18n>Weight must be positive (above 0).</span>
+      </div>
+      <div *ngIf="weight.errors.pattern">
+        <span i18n>Weight must be a number.</span>
       </div>
     </mat-error>
   </mat-form-field>

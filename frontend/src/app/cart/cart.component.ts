@@ -4,8 +4,8 @@ import { CartItem } from '../core/models/cart-item.model';
 import { OrderService } from '../core/services/order.service';
 import { Order } from '../core/models/order.model';
 import { AuthenticationService } from '../core/services/authentication.service';
-import * as $ from 'jquery';
-import 'bootstrap-notify';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +17,9 @@ export class CartComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private authenticationService: AuthenticationService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -43,35 +45,29 @@ export class CartComponent implements OnInit {
       };
       this.orderService.createOrder(order).subscribe(
         (data) => {
+          console.log(data);
           this.cartService.clearCart();
-          $[`notify`](
-            {
-              icon: 'fa fa-info-circle',
-              title: 'Order created!',
-              message: 'You have successfully created an order!',
-            },
-            { type: 'success', delay: 1000 }
-          );
+          this.snackBar
+            .open(`Order sent`, 'Homepage', {
+              duration: 5000,
+            })
+            .onAction()
+            .subscribe(() => this.router.navigate(['..']));
         },
         (error) => {
-          $[`notify`](
-            {
-              icon: 'fa fa-info-circle',
-              title: 'Order creation failed!',
-              message: 'Order could not be created!',
-            },
-            { type: 'danger', delay: 1000 }
-          );
+          console.log(error);
+          this.snackBar.open(`Couldn't create the order: ${error}`, undefined, {
+            duration: 5000,
+          });
         }
       );
     } else {
-      $[`notify`](
+      this.snackBar.open(
+        `You don't have any products in your cart`,
+        undefined,
         {
-          icon: 'fa fa-info-circle',
-          title: 'Order creation failed!',
-          message: "You don't have any products in your cart!",
-        },
-        { type: 'danger', delay: 1000 }
+          duration: 2000,
+        }
       );
     }
   }

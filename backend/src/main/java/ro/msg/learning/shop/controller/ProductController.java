@@ -16,7 +16,7 @@ public class ProductController {
     private final ProductManagementService productService;
 
     @GetMapping("/api/products")
-    public List<ProductDTO> getAllProducts(){
+    public List<ProductDTO> getAllProducts() {
 
         return productService.getProducts();
     }
@@ -28,13 +28,13 @@ public class ProductController {
     }
 
     @DeleteMapping("/api/products/{productId}")
-    public void removeProduct(@AuthenticationPrincipal @PathVariable int productId){
+    public void removeProduct(@AuthenticationPrincipal @PathVariable int productId) {
 
         productService.removeProduct(productId);
     }
 
     @PostMapping("/api/products")
-    public ProductDTO addProduct(@AuthenticationPrincipal @RequestBody ProductDTO productDTO){
+    public ProductDTO addProduct(@AuthenticationPrincipal @RequestBody ProductDTO productDTO) {
 
         return productService.addProduct(productDTO);
     }

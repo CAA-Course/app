@@ -1,755 +1,303 @@
-insert into supplier (id, name) values (1, 'Wisozk-Bosco');
-insert into supplier (id, name) values (2, 'O''Connell Group');
-insert into supplier (id, name) values (3, 'DuBuque Inc');
-insert into supplier (id, name) values (4, 'West, Leuschke and Blanda');
-insert into supplier (id, name) values (5, 'Willms, Donnelly and Ward');
-insert into supplier (id, name) values (6, 'Berge LLC');
-insert into supplier (id, name) values (7, 'Schowalter-Altenwerth');
-insert into supplier (id, name) values (8, 'Ernser, Cronin and West');
-insert into supplier (id, name) values (9, 'Keebler, Conroy and Satterfield');
-insert into supplier (id, name) values (10, 'Okuneva LLC');
-insert into supplier (id, name) values (11, 'DuBuque and Sons');
-insert into supplier (id, name) values (12, 'O''Reilly Group');
-insert into supplier (id, name) values (13, 'Lynch-Feil');
-insert into supplier (id, name) values (14, 'Hyatt Group');
-insert into supplier (id, name) values (15, 'Goldner-Hintz');
-insert into supplier (id, name) values (16, 'Jones-Legros');
-insert into supplier (id, name) values (17, 'Davis, Emmerich and Rosenbaum');
-insert into supplier (id, name) values (18, 'Feest, Donnelly and Schimmel');
-insert into supplier (id, name) values (19, 'Sporer Group');
-insert into supplier (id, name) values (20, 'Schneider-Greenfelder');
+-- Suppliers
+insert into
+  supplier (id, name)
+values
+  (1, 'Samsung');
 
-insert into product_category (id, name, description) values (1, 'quisque porta', 'Proin at turpis a pede posuere nonummy.');
-insert into product_category (id, name, description) values (2, 'platea dictumst etiam', 'Nulla suscipit ligula in lacus.');
-insert into product_category (id, name, description) values (3, 'in', 'Nulla mollis molestie lorem.');
-insert into product_category (id, name, description) values (4, 'leo pellentesque', 'In sagittis dui vel nisl.');
-insert into product_category (id, name, description) values (5, 'faucibus', 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');
-insert into product_category (id, name, description) values (6, 'consequat', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.');
-insert into product_category (id, name, description) values (7, 'odio porttitor id', 'Duis consequat dui nec nisi volutpat eleifend.');
-insert into product_category (id, name, description) values (8, 'hac habitasse', 'Sed accumsan felis.');
-insert into product_category (id, name, description) values (9, 'quis augue', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.');
-insert into product_category (id, name, description) values (10, 'diam', 'Integer ac leo.');
+insert into
+  supplier (id, name)
+values
+  (2, 'LG');
 
-insert into customer (id, first_name, last_name, username, password, email_address) values (1, 'Tanhya', 'Sapp', 'user', '$2y$04$ZZRLd8DHmGz6gZSl8SQuXeHoCc2xk0OQ/gl7.DppV1HEeL.gx.1N2'/* Decrypted: password */, 'tsapp0@altervista.org');
-insert into customer (id, first_name, last_name, username, password, email_address) values (2, 'Kathy', 'Birdsey', 'user2', '{noop}user2', 'kbirdsey1@issuu.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (3, 'Lief', 'Hagan', 'lhagan2', 'g2a92orN2npG', 'lhagan2@patch.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (4, 'Dulcea', 'Doncaster', 'ddoncaster3', 'ZnZLge2u', 'ddoncaster3@odnoklassniki.ru');
-insert into customer (id, first_name, last_name, username, password, email_address) values (5, 'Mufi', 'Weathers', 'mweathers4', 'ZBbAIg', 'mweathers4@people.com.cn');
-insert into customer (id, first_name, last_name, username, password, email_address) values (6, 'Levi', 'Eisikovitsh', 'leisikovitsh5', 'J55Sh6NM6', 'leisikovitsh5@disqus.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (7, 'Ash', 'Fann', 'afann6', 'kwH5KQXNP', 'afann6@homestead.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (8, 'Jackie', 'Basindale', 'jbasindale7', '6znyg7Oz6', 'jbasindale7@upenn.edu');
-insert into customer (id, first_name, last_name, username, password, email_address) values (9, 'Osbourne', 'Lamborne', 'olamborne8', 'qM4f0h', 'olamborne8@vk.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (10, 'Flossie', 'MacKniely', 'fmackniely9', 'JWm7k3w9LL', 'fmackniely9@histats.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (11, 'Georgiana', 'Antonowicz', 'gantonowicza', 'pUF1LbPG', 'gantonowicza@studiopress.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (12, 'Julina', 'Longcaster', 'jlongcasterb', '5995ZejB8', 'jlongcasterb@naver.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (13, 'York', 'Wildish', 'ywildishc', 'vcQl2AYKPKW', 'ywildishc@patch.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (14, 'Genna', 'Fearnyhough', 'gfearnyhoughd', 'f70GEYG9ypyz', 'gfearnyhoughd@sogou.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (15, 'Hobard', 'Iacabucci', 'hiacabuccie', '3We37q8Ikhj3', 'hiacabuccie@si.edu');
-insert into customer (id, first_name, last_name, username, password, email_address) values (16, 'Ginger', 'Dunckley', 'gdunckleyf', 'Nyt5o7', 'gdunckleyf@ucoz.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (17, 'Alexander', 'Pirdue', 'apirdueg', 'DlWjqlLTai', 'apirdueg@sun.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (18, 'Maribelle', 'Sheere', 'msheereh', 'osT7oaOjes', 'msheereh@ibm.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (19, 'Randie', 'Pointon', 'rpointoni', 'Akqh0SdEeg', 'rpointoni@live.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (20, 'Bearnard', 'Foucar', 'bfoucarj', 'z5fr0ofAIga4', 'bfoucarj@oakley.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (21, 'Otho', 'Chainey', 'ochaineyk', '90dpXqoCuCVp', 'ochaineyk@myspace.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (22, 'Gardie', 'Dulton', 'gdultonl', 'tqULcFSdB2', 'gdultonl@clickbank.net');
-insert into customer (id, first_name, last_name, username, password, email_address) values (23, 'Imogen', 'Shadrack', 'ishadrackm', 'evJC8dd', 'ishadrackm@github.io');
-insert into customer (id, first_name, last_name, username, password, email_address) values (24, 'Trixi', 'Breadon', 'tbreadonn', '5yLcakEUt6', 'tbreadonn@ibm.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (25, 'Yule', 'Blenkhorn', 'yblenkhorno', 'EtnV0z', 'yblenkhorno@example.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (26, 'Winifield', 'Calderon', 'wcalderonp', 'LQDCXZ', 'wcalderonp@eventbrite.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (27, 'Niki', 'Wiltshier', 'nwiltshierq', 'RScchBTz', 'nwiltshierq@google.fr');
-insert into customer (id, first_name, last_name, username, password, email_address) values (28, 'Martelle', 'Murfill', 'mmurfillr', '6g6BqSj', 'mmurfillr@ibm.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (29, 'Ave', 'Barke', 'abarkes', 'fLvL2DR', 'abarkes@bandcamp.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (30, 'Corney', 'Leuchars', 'cleucharst', 'FUkwvNh', 'cleucharst@seattletimes.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (31, 'Ronnica', 'Pieters', 'rpietersu', 'eMuNkzBaUbtH', 'rpietersu@oakley.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (32, 'Chickie', 'Woolaston', 'cwoolastonv', 'yFO6Th0wE', 'cwoolastonv@toplist.cz');
-insert into customer (id, first_name, last_name, username, password, email_address) values (33, 'Caddric', 'Cartlidge', 'ccartlidgew', 'ho0PRtW20', 'ccartlidgew@oracle.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (34, 'Tove', 'Akaster', 'takasterx', 'LmmIQlquvog', 'takasterx@mlb.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (35, 'Francoise', 'Olanda', 'folanday', 'L7teqoQP9', 'folanday@usatoday.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (36, 'Gaston', 'Grimbleby', 'ggrimblebyz', 'SpULHOIMobg', 'ggrimblebyz@printfriendly.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (37, 'Jodie', 'Brettel', 'jbrettel10', 'YebAcsL8o8MX', 'jbrettel10@psu.edu');
-insert into customer (id, first_name, last_name, username, password, email_address) values (38, 'Julietta', 'Biggen', 'jbiggen11', 'NULaUL7M', 'jbiggen11@usatoday.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (39, 'Dawna', 'Cranmore', 'dcranmore12', 'dCWGJeDpg', 'dcranmore12@usa.gov');
-insert into customer (id, first_name, last_name, username, password, email_address) values (40, 'Dunn', 'Lomasna', 'dlomasna13', '9mqDJWfq6Z', 'dlomasna13@netscape.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (41, 'Gillan', 'Schwieso', 'gschwieso14', 'E5bdw2EC', 'gschwieso14@dropbox.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (42, 'Desmund', 'Kidd', 'dkidd15', 'pxIoPgn', 'dkidd15@yandex.ru');
-insert into customer (id, first_name, last_name, username, password, email_address) values (43, 'Jody', 'Toulson', 'jtoulson16', 'AC4BQ9', 'jtoulson16@discuz.net');
-insert into customer (id, first_name, last_name, username, password, email_address) values (44, 'Wilma', 'MacNeillie', 'wmacneillie17', 'qsnfqcjT', 'wmacneillie17@51.la');
-insert into customer (id, first_name, last_name, username, password, email_address) values (45, 'Bonnee', 'Tine', 'btine18', '5hCFCA', 'btine18@infoseek.co.jp');
-insert into customer (id, first_name, last_name, username, password, email_address) values (46, 'Dermot', 'Margrett', 'dmargrett19', 'WpPfClZLRoC', 'dmargrett19@prlog.org');
-insert into customer (id, first_name, last_name, username, password, email_address) values (47, 'Helli', 'Legan', 'hlegan1a', 'pgaPCFgVIh3', 'hlegan1a@npr.org');
-insert into customer (id, first_name, last_name, username, password, email_address) values (48, 'Katy', 'Kaas', 'kkaas1b', 'mXSdFtHqTm', 'kkaas1b@hibu.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (49, 'Clarine', 'Maginot', 'cmaginot1c', 'Rr5RAXSGjE', 'cmaginot1c@elpais.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (50, 'Enrico', 'Vitall', 'evitall1d', 'YFyJSN6vRrc', 'evitall1d@adobe.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (51, 'Xylia', 'Ventom', 'xventom1e', 'KrBbo5Yrsc', 'xventom1e@domainmarket.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (52, 'Coretta', 'Braund', 'cbraund1f', 'XpZM8UdBYg', 'cbraund1f@amazon.de');
-insert into customer (id, first_name, last_name, username, password, email_address) values (53, 'Ailina', 'Boynton', 'aboynton1g', 'aJnNFd9KtN7a', 'aboynton1g@biblegateway.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (54, 'Vivian', 'Hallwell', 'vhallwell1h', 'C8EQZ19X', 'vhallwell1h@ifeng.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (55, 'Torin', 'Faley', 'tfaley1i', 'Tc3qKStP9vzL', 'tfaley1i@ifeng.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (56, 'Bendick', 'Levi', 'blevi1j', 'NGjOk8fFl', 'blevi1j@seattletimes.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (57, 'Gallard', 'Louys', 'glouys1k', 'TgHEae0', 'glouys1k@gravatar.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (58, 'Roze', 'Yurov', 'ryurov1l', 'DXg623TTLO1', 'ryurov1l@businessweek.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (59, 'Hilario', 'Millery', 'hmillery1m', 'nALMEia9KS', 'hmillery1m@sourceforge.net');
-insert into customer (id, first_name, last_name, username, password, email_address) values (60, 'Kyle', 'Kunzler', 'kkunzler1n', 'HmXieyfX', 'kkunzler1n@yellowpages.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (61, 'Sabra', 'MacAirt', 'smacairt1o', 'aFOMXAT2lG', 'smacairt1o@typepad.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (62, 'Linnie', 'Kemish', 'lkemish1p', 'uUWMqX69m', 'lkemish1p@unesco.org');
-insert into customer (id, first_name, last_name, username, password, email_address) values (63, 'Cob', 'Coal', 'ccoal1q', '66dWh1', 'ccoal1q@nbcnews.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (64, 'Andree', 'Scrimshaw', 'ascrimshaw1r', 'EW719bEkgpvg', 'ascrimshaw1r@google.es');
-insert into customer (id, first_name, last_name, username, password, email_address) values (65, 'Rosemaria', 'Korb', 'rkorb1s', 'JcgYyvq', 'rkorb1s@theglobeandmail.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (66, 'Walker', 'Birds', 'wbirds1t', 'gy8YLKx0h9', 'wbirds1t@noaa.gov');
-insert into customer (id, first_name, last_name, username, password, email_address) values (67, 'Lorita', 'Timmens', 'ltimmens1u', 'rbbsaVNBpLM', 'ltimmens1u@tmall.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (68, 'Kassia', 'Bilsland', 'kbilsland1v', 'F2Kdw3Ifc9Ks', 'kbilsland1v@goo.ne.jp');
-insert into customer (id, first_name, last_name, username, password, email_address) values (69, 'Brok', 'Potkins', 'bpotkins1w', 'U420xnAnueqV', 'bpotkins1w@imageshack.us');
-insert into customer (id, first_name, last_name, username, password, email_address) values (70, 'Dar', 'Andreopolos', 'dandreopolos1x', 'KDDZC6SYbRn', 'dandreopolos1x@dot.gov');
-insert into customer (id, first_name, last_name, username, password, email_address) values (71, 'Jordain', 'Bartalucci', 'jbartalucci1y', 'xnNEfwjm', 'jbartalucci1y@shinystat.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (72, 'Jada', 'Twinbrow', 'jtwinbrow1z', 'm7DQkX', 'jtwinbrow1z@state.gov');
-insert into customer (id, first_name, last_name, username, password, email_address) values (73, 'Yetty', 'Jodlkowski', 'yjodlkowski20', 'NMMUZ9', 'yjodlkowski20@theatlantic.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (74, 'Jerrome', 'Tilston', 'jtilston21', 'l94zoBlslqzq', 'jtilston21@yellowpages.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (75, 'Ki', 'Cadany', 'kcadany22', 'AAkyUrfz0U', 'kcadany22@examiner.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (76, 'Boyce', 'Mossman', 'bmossman23', 'QFZpjhIM', 'bmossman23@issuu.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (77, 'Conrade', 'Jendrusch', 'cjendrusch24', 'ep5HJjLN', 'cjendrusch24@miibeian.gov.cn');
-insert into customer (id, first_name, last_name, username, password, email_address) values (78, 'Noah', 'McKilroe', 'nmckilroe25', 'Gv8OiyDwDB', 'nmckilroe25@foxnews.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (79, 'Olimpia', 'Daouze', 'odaouze26', '4zyHiucbRcR', 'odaouze26@tinypic.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (80, 'Annamaria', 'Carabet', 'acarabet27', 'lstc1s70SB', 'acarabet27@jimdo.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (81, 'Shana', 'McCome', 'smccome28', 'j2diOQpEn', 'smccome28@hubpages.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (82, 'Pearl', 'Oran', 'poran29', 'ocN0Gq', 'poran29@answers.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (83, 'Celle', 'Greville', 'cgreville2a', 'awHyjm', 'cgreville2a@fda.gov');
-insert into customer (id, first_name, last_name, username, password, email_address) values (84, 'Katee', 'Burl', 'kburl2b', 'QEYo8q7cRdIx', 'kburl2b@g.co');
-insert into customer (id, first_name, last_name, username, password, email_address) values (85, 'Vasili', 'Pumphreys', 'vpumphreys2c', '9AlSBo', 'vpumphreys2c@ibm.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (86, 'Bard', 'Whiffen', 'bwhiffen2d', 'URxvHc', 'bwhiffen2d@eepurl.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (87, 'Lonnard', 'Stovin', 'lstovin2e', 'vp6mXT9S', 'lstovin2e@livejournal.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (88, 'Mildrid', 'Patria', 'mpatria2f', 'Ub3TV9', 'mpatria2f@lycos.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (89, 'Ilaire', 'Garlant', 'igarlant2g', 'iL5fS1FaEIbP', 'igarlant2g@abc.net.au');
-insert into customer (id, first_name, last_name, username, password, email_address) values (90, 'Tasia', 'Leasor', 'tleasor2h', 'RBfr1DniQ', 'tleasor2h@globo.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (91, 'Abbie', 'Jessel', 'ajessel2i', 'oOwNhAR', 'ajessel2i@addthis.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (92, 'Siffre', 'Leavold', 'sleavold2j', 'NezJQwosJ', 'sleavold2j@washingtonpost.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (93, 'Laurianne', 'Hugnot', 'lhugnot2k', 'SlZqSKBMk', 'lhugnot2k@surveymonkey.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (94, 'Maxie', 'Canning', 'mcanning2l', 'a36jiBm0rp', 'mcanning2l@washington.edu');
-insert into customer (id, first_name, last_name, username, password, email_address) values (95, 'Yvonne', 'Simons', 'ysimons2m', 'LokD26', 'ysimons2m@mozilla.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (96, 'Franky', 'Yitzhakov', 'fyitzhakov2n', 'DunbXBw9IF4N', 'fyitzhakov2n@bizjournals.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (97, 'Carrissa', 'Allewell', 'callewell2o', 'M9szAeQffSFg', 'callewell2o@stanford.edu');
-insert into customer (id, first_name, last_name, username, password, email_address) values (98, 'Joshua', 'Ferriere', 'jferriere2p', 'TVEZZAoYWJ', 'jferriere2p@answers.com');
-insert into customer (id, first_name, last_name, username, password, email_address) values (99, 'Joete', 'Shelborne', 'jshelborne2q', 'gwoAOVXfs', 'jshelborne2q@google.de');
-insert into customer (id, first_name, last_name, username, password, email_address) values (100, 'Pegeen', 'Delf', 'pdelf2r', 'l0ypqBK', 'pdelf2r@goo.gl');
+insert into
+  supplier (id, name)
+values
+  (3, 'Apple');
 
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (1, 'commodo placerat', 'France', 'Corbeil-Essonnes', 'Île-de-France', '44 Golf View Road');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (2, 'orci vehicula condimentum', 'France', 'Chalon-sur-Saône', 'Bourgogne', '5 Michigan Crossing');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (3, 'integer', 'France', 'Issy-les-Moulineaux', 'Île-de-France', '8988 Arizona Road');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (4, 'pulvinar', 'France', 'Aix-en-Provence', 'Provence-Alpes-Côte d''Azur', '37356 Atwood Point');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (5, 'libero rutrum ac', 'France', 'Toulouse', 'Midi-Pyrénées', '9 Warrior Place');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (6, 'congue etiam justo', 'United Kingdom', 'Thorpe', 'England', '94 Sutteridge Lane');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (7, 'nulla suspendisse potenti', 'Germany', 'Halle', 'Sachsen-Anhalt', '572 Dovetail Crossing');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (8, 'libero rutrum ac', 'France', 'Nantes', 'Pays de la Loire', '6 John Wall Court');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (9, 'mattis', 'France', 'Saint-Maurice', 'Île-de-France', '06 Ridge Oak Crossing');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (10, 'aenean fermentum donec', 'France', 'Arcueil', 'Île-de-France', '9 Amoth Lane');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (11, 'ultrices mattis odio', 'France', 'Nantes', 'Pays de la Loire', '588 Michigan Terrace');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (12, 'maecenas pulvinar lobortis', 'France', 'Angoulême', 'Poitou-Charentes', '7 Boyd Lane');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (13, 'in', 'France', 'Le Perreux-sur-Marne', 'Île-de-France', '40280 Monument Way');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (14, 'aliquet maecenas leo', 'France', 'Arcueil', 'Île-de-France', '24 Talmadge Avenue');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (15, 'faucibus orci', 'France', 'Marignane', 'Provence-Alpes-Côte d''Azur', '51 Mayer Crossing');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (16, 'non mattis', 'France', 'Bourges', 'Centre', '17373 Almo Place');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (17, 'massa donec dapibus', 'France', 'Istres', 'Provence-Alpes-Côte d''Azur', '8792 Burrows Plaza');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (18, 'in', 'Spain', 'Albacete', 'Castilla - La Mancha', '219 Fieldstone Way');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (19, 'consectetuer eget rutrum', 'France', 'Creil', 'Picardie', '4 Brown Avenue');
-insert into location (id, name, address_country, address_city, address_county, address_street_address) values (20, 'lacinia', 'France', 'Caen', 'Basse-Normandie', '0 Kropf Plaza');
+insert into
+  supplier (id, name)
+values
+  (4, 'Under Armour');
 
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (1, 'sapien in sapien', 'Nulla facilisi.', 799.66, 3, 6, 19, 'http://dummyimage.com/702x951.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (2, 'est et tempus', 'Duis bibendum.', 689.5, 71, 10, 17, 'http://dummyimage.com/709x164.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (3, 'est donec odio', 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.', 448.68, 45, 7, 8, 'http://dummyimage.com/144x148.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (4, 'augue luctus', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 443.5, 89, 6, 1, 'http://dummyimage.com/756x252.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (5, 'ante vel', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 940.06, 16, 7, 14, 'http://dummyimage.com/309x341.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (6, 'nisi', 'Nulla tellus.', 815.86, 92, 9, 17, 'http://dummyimage.com/786x696.bmp/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (7, 'lacus morbi', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 858.57, 25, 6, 14, 'http://dummyimage.com/507x426.png/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (8, 'nec condimentum neque', 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 158.52, 46, 3, 12, 'http://dummyimage.com/460x668.png/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (9, 'justo pellentesque', 'Nunc purus.', 44.46, 23, 5, 1, 'http://dummyimage.com/253x795.jpg/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (10, 'molestie lorem quisque', 'Pellentesque ultrices mattis odio.', 61.07, 54, 8, 4, 'http://dummyimage.com/164x666.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (11, 'duis', 'In sagittis dui vel nisl.', 954.51, 98, 3, 12, 'http://dummyimage.com/367x790.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (12, 'lectus', 'Proin risus.', 73.75, 78, 9, 12, 'http://dummyimage.com/192x794.png/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (13, 'rutrum', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', 16.35, 40, 9, 5, 'http://dummyimage.com/413x129.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (14, 'a nibh in', 'In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.', 26.26, 76, 1, 20, 'http://dummyimage.com/114x499.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (15, 'cubilia curae', 'Proin risus.', 654.13, 75, 4, 5, 'http://dummyimage.com/437x412.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (16, 'diam id ornare', 'Nulla mollis molestie lorem. Quisque ut erat.', 255.89, 29, 9, 6, 'http://dummyimage.com/672x159.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (17, 'mauris eget', 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', 428.71, 73, 6, 10, 'http://dummyimage.com/711x421.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (18, 'ut mauris', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 255.35, 86, 2, 3, 'http://dummyimage.com/690x407.png/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (19, 'faucibus orci luctus', 'Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.', 728.95, 97, 6, 3, 'http://dummyimage.com/512x482.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (20, 'mauris', 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.', 669.12, 18, 1, 15, 'http://dummyimage.com/701x642.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (21, 'nibh in', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 907.3, 40, 1, 10, 'http://dummyimage.com/519x656.bmp/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (22, 'diam vitae', 'Nulla mollis molestie lorem. Quisque ut erat.', 105.83, 74, 10, 5, 'http://dummyimage.com/323x863.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (23, 'cubilia curae duis', 'Suspendisse accumsan tortor quis turpis. Sed ante.', 646.77, 28, 6, 10, 'http://dummyimage.com/905x570.bmp/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (24, 'nulla ultrices aliquet', 'Nulla ac enim.', 918.45, 31, 10, 18, 'http://dummyimage.com/554x972.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (25, 'faucibus orci luctus', 'Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', 496.9, 45, 5, 10, 'http://dummyimage.com/599x327.jpg/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (26, 'vitae nisi nam', 'Quisque id justo sit amet sapien dignissim vestibulum.', 139.44, 96, 4, 1, 'http://dummyimage.com/928x119.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (27, 'ut blandit', 'Phasellus sit amet erat.', 908.77, 78, 6, 1, 'http://dummyimage.com/373x527.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (28, 'nunc donec quis', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.', 41.88, 23, 5, 4, 'http://dummyimage.com/956x636.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (29, 'cursus id turpis', 'Morbi non quam nec dui luctus rutrum. Nulla tellus.', 32.62, 68, 5, 2, 'http://dummyimage.com/604x335.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (30, 'nunc commodo', 'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 255.9, 28, 9, 19, 'http://dummyimage.com/154x968.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (31, 'vestibulum sit', 'Praesent lectus.', 547.63, 73, 3, 4, 'http://dummyimage.com/595x569.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (32, 'cras non', 'Nunc rhoncus dui vel sem.', 880.15, 91, 10, 20, 'http://dummyimage.com/777x270.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (33, 'ultrices', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 795.1, 28, 6, 1, 'http://dummyimage.com/652x648.png/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (34, 'ac lobortis', 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.', 542.21, 71, 3, 5, 'http://dummyimage.com/737x238.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (35, 'quam a odio', 'Donec ut dolor.', 47.83, 15, 8, 20, 'http://dummyimage.com/117x317.png/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (36, 'tortor', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 999.85, 53, 4, 1, 'http://dummyimage.com/837x831.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (37, 'est et tempus', 'Curabitur at ipsum ac tellus semper interdum.', 278.94, 29, 4, 4, 'http://dummyimage.com/844x785.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (38, 'accumsan', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.', 245.87, 72, 6, 14, 'http://dummyimage.com/171x260.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (39, 'nullam orci pede', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.', 871.83, 75, 4, 18, 'http://dummyimage.com/589x635.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (40, 'id', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.', 183.05, 36, 4, 2, 'http://dummyimage.com/413x268.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (41, 'congue', 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.', 296.89, 46, 3, 12, 'http://dummyimage.com/549x880.bmp/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (42, 'curabitur at', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 30.72, 40, 10, 4, 'http://dummyimage.com/104x713.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (43, 'mus etiam', 'Nunc rhoncus dui vel sem. Sed sagittis.', 46.4, 12, 2, 6, 'http://dummyimage.com/931x787.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (44, 'quis augue luctus', 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', 682.34, 69, 4, 14, 'http://dummyimage.com/980x218.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (45, 'aliquet ultrices', 'Ut tellus.', 207.66, 44, 9, 4, 'http://dummyimage.com/998x217.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (46, 'sed', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', 829.78, 54, 10, 10, 'http://dummyimage.com/309x573.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (47, 'sit amet', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 837.45, 36, 6, 5, 'http://dummyimage.com/905x258.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (48, 'sed tincidunt eu', 'Aenean fermentum.', 607.27, 22, 4, 1, 'http://dummyimage.com/174x810.bmp/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (49, 'nibh in', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 194.34, 5, 7, 11, 'http://dummyimage.com/195x784.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (50, 'convallis eget eleifend', 'Aliquam non mauris.', 617.48, 88, 10, 6, 'http://dummyimage.com/787x857.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (51, 'nisi volutpat eleifend', 'Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.', 333.37, 25, 4, 10, 'http://dummyimage.com/319x159.jpg/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (52, 'elementum pellentesque', 'Vestibulum rutrum rutrum neque.', 765.78, 88, 6, 12, 'http://dummyimage.com/193x297.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (53, 'vel ipsum', 'Duis consequat dui nec nisi volutpat eleifend.', 655.04, 94, 3, 14, 'http://dummyimage.com/217x252.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (54, 'semper interdum mauris', 'Suspendisse accumsan tortor quis turpis. Sed ante.', 689.55, 81, 10, 20, 'http://dummyimage.com/197x381.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (55, 'adipiscing lorem vitae', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.', 999.47, 52, 7, 15, 'http://dummyimage.com/710x929.png/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (56, 'pede ac diam', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.', 939.96, 70, 5, 5, 'http://dummyimage.com/910x915.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (57, 'in lectus', 'Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 75.37, 2, 2, 19, 'http://dummyimage.com/776x913.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (58, 'proin leo odio', 'Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.', 151.07, 33, 4, 11, 'http://dummyimage.com/933x575.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (59, 'morbi non', 'Cras in purus eu magna vulputate luctus.', 774.66, 67, 10, 10, 'http://dummyimage.com/657x580.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (60, 'duis', 'Nam dui.', 680.46, 11, 8, 4, 'http://dummyimage.com/692x938.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (61, 'cras non', 'Suspendisse accumsan tortor quis turpis. Sed ante.', 738.67, 87, 5, 4, 'http://dummyimage.com/938x288.bmp/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (62, 'sodales', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 609.56, 72, 3, 3, 'http://dummyimage.com/823x381.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (63, 'at velit vivamus', 'Integer a nibh.', 559.22, 21, 1, 18, 'http://dummyimage.com/886x147.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (64, 'semper', 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.', 953.22, 63, 3, 11, 'http://dummyimage.com/306x942.bmp/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (65, 'vehicula condimentum curabitur', 'Quisque id justo sit amet sapien dignissim vestibulum.', 664.93, 74, 8, 6, 'http://dummyimage.com/890x966.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (66, 'consequat metus', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.', 973.78, 56, 2, 7, 'http://dummyimage.com/192x723.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (67, 'dui vel nisl', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 688.46, 83, 3, 19, 'http://dummyimage.com/220x894.bmp/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (68, 'vestibulum', 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 970.25, 88, 5, 6, 'http://dummyimage.com/299x952.png/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (69, 'volutpat in congue', 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 919.83, 35, 6, 14, 'http://dummyimage.com/851x891.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (70, 'non mattis', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', 515.54, 8, 6, 11, 'http://dummyimage.com/143x371.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (71, 'lacus purus', 'Nullam varius. Nulla facilisi.', 648.83, 15, 8, 20, 'http://dummyimage.com/267x770.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (72, 'dolor', 'Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.', 939.18, 33, 5, 13, 'http://dummyimage.com/688x640.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (73, 'mauris non ligula', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 942.97, 23, 9, 7, 'http://dummyimage.com/324x185.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (74, 'et', 'In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.', 508.78, 25, 9, 4, 'http://dummyimage.com/586x849.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (75, 'ante vivamus tortor', 'Proin at turpis a pede posuere nonummy.', 208.68, 22, 6, 7, 'http://dummyimage.com/436x748.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (76, 'interdum mauris non', 'Nunc purus.', 865.68, 42, 9, 8, 'http://dummyimage.com/661x877.bmp/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (77, 'donec', 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.', 46.31, 11, 6, 15, 'http://dummyimage.com/137x470.bmp/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (78, 'a odio in', 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.', 882.37, 1, 9, 4, 'http://dummyimage.com/396x296.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (79, 'pulvinar', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 835.83, 27, 3, 6, 'http://dummyimage.com/342x836.jpg/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (80, 'neque libero convallis', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.', 594.7, 67, 6, 14, 'http://dummyimage.com/170x108.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (81, 'elementum in hac', 'Morbi quis tortor id nulla ultrices aliquet.', 548.99, 78, 1, 13, 'http://dummyimage.com/688x396.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (82, 'pede ullamcorper', 'Cras non velit nec nisi vulputate nonummy.', 563.43, 30, 3, 2, 'http://dummyimage.com/119x451.png/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (83, 'nulla sed accumsan', 'In quis justo. Maecenas rhoncus aliquam lacus.', 537.44, 84, 7, 9, 'http://dummyimage.com/182x999.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (84, 'in faucibus', 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.', 855.65, 37, 7, 13, 'http://dummyimage.com/612x660.bmp/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (85, 'erat tortor', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.', 977.04, 33, 10, 3, 'http://dummyimage.com/470x119.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (86, 'aliquam', 'Suspendisse ornare consequat lectus.', 823.8, 65, 3, 19, 'http://dummyimage.com/669x138.bmp/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (87, 'pede libero', 'Integer ac neque. Duis bibendum.', 393.32, 50, 4, 13, 'http://dummyimage.com/151x496.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (88, 'non', 'Morbi vel lectus in quam fringilla rhoncus.', 898.33, 80, 1, 12, 'http://dummyimage.com/137x872.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (89, 'sapien', 'Nulla nisl. Nunc nisl.', 41.49, 27, 3, 19, 'http://dummyimage.com/682x230.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (90, 'nisi at nibh', 'In quis justo. Maecenas rhoncus aliquam lacus.', 516.94, 11, 7, 17, 'http://dummyimage.com/634x304.png/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (91, 'eget vulputate', 'Duis mattis egestas metus. Aenean fermentum.', 244.17, 60, 4, 18, 'http://dummyimage.com/811x657.bmp/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (92, 'curae mauris', 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.', 158.32, 83, 1, 15, 'http://dummyimage.com/106x440.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (93, 'aliquet at feugiat', 'Ut tellus. Nulla ut erat id mauris vulputate elementum.', 330.32, 94, 3, 14, 'http://dummyimage.com/215x323.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (94, 'quam fringilla', 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 904.44, 4, 1, 10, 'http://dummyimage.com/665x315.jpg/cc0000/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (95, 'vestibulum ante ipsum', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.', 938.28, 83, 4, 17, 'http://dummyimage.com/383x822.jpg/ff4444/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (96, 'odio elementum', 'Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', 300.16, 79, 1, 4, 'http://dummyimage.com/492x951.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (97, 'eleifend donec', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.', 151.59, 16, 6, 7, 'http://dummyimage.com/708x947.jpg/5fa2dd/ffffff');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (98, 'sed sagittis', 'Nam dui.', 512.67, 17, 7, 14, 'http://dummyimage.com/768x568.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (99, 'pellentesque ultrices', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', 921.03, 90, 6, 18, 'http://dummyimage.com/747x960.png/dddddd/000000');
-insert into product (id, name, description, price, weight, category_id, supplier_id, image_url) values (100, 'consequat nulla nisl', 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.', 146.26, 89, 8, 18, 'http://dummyimage.com/339x837.png/5fa2dd/ffffff');
+-- Categories
+insert into
+  product_category (id, name, description)
+values
+  (1, 'Phones', 'Phones');
 
-insert into stock (product_id, location_id, quantity) values (4, 4, 521) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 14, 14) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 4, 980) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 9, 405) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (17, 2, 532) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 18, 775) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (43, 16, 85) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 1, 7) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (2, 6, 941) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (66, 8, 634) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 18, 630) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (93, 13, 642) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 8, 948) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 10, 749) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (43, 3, 318) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 1, 549) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 6, 611) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (19, 4, 709) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (39, 6, 553) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (31, 10, 623) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (48, 5, 835) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 2, 138) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (16, 20, 775) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 7, 934) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 5, 727) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (55, 20, 53) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 8, 421) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 10, 747) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (94, 9, 506) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 2, 227) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 6, 294) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 14, 736) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 3, 774) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 1, 527) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 17, 824) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (17, 18, 513) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 6, 686) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (9, 1, 229) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (28, 6, 215) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (38, 20, 764) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 7, 261) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 18, 671) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (26, 6, 717) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (18, 2, 412) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 13, 273) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 6, 57) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (67, 1, 898) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (71, 1, 697) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (4, 5, 47) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (43, 13, 316) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 7, 74) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (88, 11, 173) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 3, 766) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 2, 718) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 16, 277) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (79, 18, 934) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (15, 17, 134) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 17, 431) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 2, 738) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 18, 456) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (26, 12, 566) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (19, 15, 153) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (8, 19, 271) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 20, 889) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 8, 134) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 16, 888) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 13, 244) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 8, 825) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (5, 11, 774) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 3, 820) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 18, 524) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (66, 1, 602) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (4, 17, 27) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 4, 706) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (55, 4, 620) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 5, 508) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 11, 518) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 19, 681) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (37, 13, 737) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 13, 98) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 6, 665) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (66, 15, 649) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 12, 485) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 19, 861) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (75, 13, 267) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (6, 1, 717) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 2, 280) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (94, 2, 787) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 17, 302) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 16, 1) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (83, 18, 627) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 9, 342) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (41, 18, 81) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (40, 5, 648) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 18, 752) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (88, 10, 476) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 2, 110) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (29, 3, 854) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 14, 413) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 19, 562) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 2, 836) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 1, 836) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 3, 869) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 6, 585) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (36, 12, 304) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (94, 5, 432) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (93, 11, 78) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 20, 98) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 5, 605) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (25, 6, 941) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (8, 3, 727) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (11, 16, 390) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (49, 1, 29) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (93, 18, 622) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 12, 231) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 4, 300) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 19, 305) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 3, 588) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (62, 4, 400) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (80, 14, 446) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (93, 2, 809) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (10, 15, 465) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 4, 245) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 9, 596) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 12, 195) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 5, 123) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (62, 2, 48) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 20, 20) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (62, 20, 319) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 6, 485) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (45, 12, 576) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (47, 19, 231) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 8, 854) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 3, 562) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 5, 303) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 15, 589) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 19, 767) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (85, 13, 294) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (17, 11, 502) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (37, 13, 206) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 19, 277) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (36, 13, 86) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 7, 696) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (83, 11, 503) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (60, 2, 508) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 11, 707) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 2, 782) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 10, 735) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (99, 2, 601) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 16, 685) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 14, 111) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 15, 280) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (96, 7, 543) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (38, 11, 552) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 17, 569) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 1, 648) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (80, 6, 62) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 4, 71) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 2, 240) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (97, 17, 541) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 19, 23) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 17, 545) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (58, 7, 609) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 18, 342) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 18, 661) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 16, 755) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (80, 9, 161) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 1, 658) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 15, 598) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (67, 11, 400) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 14, 607) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (95, 19, 162) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 14, 204) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 12, 263) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (29, 20, 573) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (25, 5, 762) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (9, 6, 137) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 16, 107) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (11, 18, 922) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 9, 216) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (26, 16, 182) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (86, 6, 938) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 20, 929) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 18, 855) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 20, 227) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 19, 46) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (87, 9, 784) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (43, 19, 907) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (39, 20, 907) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (96, 4, 511) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (80, 4, 675) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (64, 7, 167) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (75, 5, 458) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 18, 129) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 8, 123) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 3, 975) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 18, 878) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 20, 906) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (50, 4, 7) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 6, 875) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 7, 685) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (15, 6, 812) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 3, 180) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (58, 16, 16) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 2, 352) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (34, 12, 745) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 8, 438) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (82, 16, 625) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (19, 5, 239) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (37, 3, 377) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 7, 900) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (95, 13, 875) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (79, 17, 655) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 5, 94) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (41, 11, 572) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 3, 760) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (79, 17, 400) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (40, 1, 179) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 8, 961) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 15, 605) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (70, 2, 980) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (70, 2, 196) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 20, 274) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 5, 691) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 14, 455) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 16, 419) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 3, 823) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 13, 329) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 13, 769) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (83, 2, 127) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (94, 15, 712) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (49, 3, 77) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (45, 16, 770) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 17, 485) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 17, 19) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 15, 454) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (50, 10, 897) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (82, 11, 228) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 7, 164) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (65, 12, 363) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 18, 266) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 6, 748) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (99, 5, 745) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (37, 19, 90) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 11, 193) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (8, 9, 58) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 1, 748) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 14, 675) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (19, 19, 840) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 8, 681) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 5, 768) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 14, 467) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 17, 212) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (6, 15, 67) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 6, 21) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 11, 301) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 20, 14) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 3, 415) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (25, 4, 337) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 12, 400) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (47, 10, 564) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 6, 964) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (61, 19, 486) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 14, 507) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (5, 1, 996) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (15, 11, 55) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 1, 493) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 15, 463) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 6, 303) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 10, 851) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 15, 766) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (71, 16, 582) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (11, 3, 133) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (34, 17, 280) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 5, 575) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 8, 552) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (87, 19, 37) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 19, 909) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 9, 380) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 7, 894) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 5, 752) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (34, 13, 712) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (34, 3, 773) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 10, 51) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (21, 6, 96) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 7, 850) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 10, 667) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 1, 76) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 7, 800) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (61, 7, 961) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 1, 738) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 12, 142) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 19, 935) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 7, 94) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 9, 202) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 8, 375) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 20, 67) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 20, 63) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (59, 1, 267) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (99, 6, 257) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (48, 13, 867) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 9, 151) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (94, 17, 336) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 10, 575) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 2, 619) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 2, 202) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 11, 708) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 20, 117) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 19, 261) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (11, 12, 339) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 16, 127) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 2, 982) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (86, 19, 137) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 15, 580) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 3, 55) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 14, 736) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (58, 14, 705) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 7, 172) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 12, 957) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (86, 4, 842) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (49, 2, 108) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (75, 1, 927) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 18, 122) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 15, 301) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (9, 10, 267) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 19, 981) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (67, 17, 62) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (17, 20, 870) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (58, 4, 744) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (26, 2, 481) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 5, 823) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 4, 547) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 16, 992) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 1, 803) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 19, 597) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (28, 13, 102) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (71, 3, 412) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 12, 395) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 3, 677) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (18, 16, 731) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (41, 18, 120) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (37, 13, 597) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 14, 947) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (2, 1, 616) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (75, 11, 350) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (78, 2, 438) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (16, 10, 917) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (99, 4, 713) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (84, 9, 171) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (65, 17, 811) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 18, 633) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (59, 12, 589) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (48, 13, 813) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 1, 721) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 10, 846) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (80, 13, 815) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (59, 16, 616) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (13, 15, 181) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 20, 751) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (45, 3, 149) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (28, 12, 959) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 12, 230) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 5, 758) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 3, 588) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (86, 20, 625) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 8, 757) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (40, 9, 25) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (99, 18, 147) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (71, 1, 713) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (77, 14, 530) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 7, 874) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (55, 16, 316) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (12, 7, 484) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (64, 6, 706) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (4, 13, 874) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 17, 223) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 7, 400) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 17, 859) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (82, 14, 751) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (85, 16, 652) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 8, 282) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (18, 4, 297) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 10, 454) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 13, 63) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 2, 854) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (68, 8, 273) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (5, 15, 819) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (18, 8, 340) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (85, 5, 506) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (36, 11, 485) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 6, 753) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (38, 17, 529) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (65, 2, 826) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 8, 823) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (20, 1, 471) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 19, 74) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 8, 420) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (15, 18, 540) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (44, 13, 4) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 14, 535) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 1, 164) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (72, 3, 774) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 16, 192) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (86, 17, 236) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (22, 12, 227) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (48, 11, 750) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 14, 920) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 10, 909) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 18, 432) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 7, 277) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 14, 908) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (11, 16, 286) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 19, 987) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 18, 43) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 15, 854) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 17, 202) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (70, 4, 784) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (40, 17, 706) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (87, 8, 881) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (98, 8, 658) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 6, 959) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (92, 17, 660) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (50, 4, 186) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (69, 13, 520) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (67, 13, 347) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 16, 890) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 14, 804) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (82, 10, 2) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (17, 18, 919) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (52, 12, 173) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 14, 688) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 6, 429) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 13, 78) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (36, 13, 733) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 2, 214) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (85, 1, 28) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (32, 9, 892) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (53, 15, 634) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (92, 13, 483) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (4, 17, 752) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 10, 199) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 6, 493) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (91, 3, 440) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (61, 10, 31) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (59, 1, 469) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (34, 4, 650) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (47, 2, 870) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (100, 17, 18) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 8, 595) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (23, 11, 714) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (51, 13, 34) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (3, 6, 315) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 12, 577) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (33, 17, 509) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (22, 7, 197) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (6, 20, 236) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (67, 5, 84) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 7, 440) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (14, 15, 41) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (27, 16, 868) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (73, 13, 976) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (76, 2, 29) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (89, 1, 227) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (35, 13, 371) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (6, 7, 281) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (79, 11, 119) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (71, 17, 61) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 7, 657) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (63, 13, 986) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 13, 758) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 9, 856) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (81, 13, 174) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (24, 8, 91) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (1, 15, 790) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (25, 8, 870) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (42, 19, 199) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (7, 10, 396) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (56, 15, 156) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (54, 18, 32) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (79, 13, 88) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (74, 11, 818) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (6, 15, 369) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 12, 17) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (38, 2, 876) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (28, 8, 385) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (5, 5, 79) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (30, 18, 40) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (57, 14, 233) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (65, 1, 825) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (36, 4, 439) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (29, 18, 317) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (43, 19, 51) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (90, 20, 774) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (49, 4, 405) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (62, 3, 476) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (8, 9, 264) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (66, 10, 253) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (46, 15, 986) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (9, 11, 377) on conflict do nothing;
-insert into stock (product_id, location_id, quantity) values (48, 12, 366) on conflict do nothing;
+insert into
+  product_category (id, name, description)
+values
+  (2, 'Tablets', 'Tables');
+
+insert into
+  product_category (id, name, description)
+values
+  (3, 'TV', 'TV');
+
+insert into
+  product_category (id, name, description)
+values
+  (4, 'Sport', 'Sportswear');
+
+-- Customers
+insert into
+  customer (
+    id,
+    first_name,
+    last_name,
+    username,
+    password,
+    email_address
+  )
+values
+  (
+    1,
+    'Tanhya',
+    'Sapp',
+    'user',
+    '$2a$10$nzCfBboi7aBMnEOhjiJp2OhQUY0aCLY4hXy9711.bGihScamL0pOW'
+    /* Decrypted: storepass */
+,
+    'tsapp0@altervista.org'
+  );
+
+insert into
+  customer (
+    id,
+    first_name,
+    last_name,
+    username,
+    password,
+    email_address
+  )
+values
+  (
+    2,
+    'Kathy',
+    'Birdsey',
+    'user2',
+    '{noop}user2',
+    'kbirdsey1@issuu.com'
+  );
+
+-- Locations
+insert into
+  location (
+    id,
+    name,
+    address_country,
+    address_city,
+    address_county,
+    address_street_address
+  )
+values
+  (
+    1,
+    'Showroom Cluj Platinia',
+    'Romania',
+    'Cluj-Napoca',
+    'Cluj',
+    '2-6 Calea Manastur'
+  );
+
+insert into
+  location (
+    id,
+    name,
+    address_country,
+    address_city,
+    address_county,
+    address_street_address
+  )
+values
+  (
+    2,
+    'Showroom Brasov',
+    'Romania',
+    'Brasov',
+    'Brasov',
+    '58 Nicolae Titulescu'
+  );
+
+insert into
+  location (
+    id,
+    name,
+    address_country,
+    address_city,
+    address_county,
+    address_street_address
+  )
+values
+  (
+    3,
+    'Showroom Oradea',
+    'Romania',
+    'Oradea',
+    'Bihor',
+    '1 Piata Cetatii'
+  );
+
+insert into
+  location (
+    id,
+    name,
+    address_country,
+    address_city,
+    address_county,
+    address_street_address
+  )
+values
+  (
+    4,
+    'Showroom Crangasi',
+    'Romania',
+    'Bucuresti',
+    'Bucuresti',
+    '148 Soseaua Virtutii'
+  );
+
+-- Products
+insert into
+  product (
+    id,
+    name,
+    description,
+    price,
+    weight,
+    category_id,
+    supplier_id,
+    image_url
+  )
+values
+  (
+    1,
+    'Galaxy S20',
+    'Galaxy S20',
+    3110.99,
+    0.8,
+    1,
+    1,
+    'https://lcdn.altex.ro/media/catalog/product/S/2/S20-cosmic-gray_4_88e92f6d.jpg'
+  );
+
+insert into
+  product (
+    id,
+    name,
+    description,
+    price,
+    weight,
+    category_id,
+    supplier_id,
+    image_url
+  )
+values
+  (
+    2,
+    'iPhone SE 2',
+    'iPhone SE v2',
+    2249.99,
+    0.9,
+    1,
+    3,
+    'https://lcdn.altex.ro/resize/media/catalog/product/i/P/2bd48d28d1c32adea0e55139a4e6434a/iPhone_SE_Black_2-up_US-EN_SCREEN.jpg'
+  );
+
+insert into
+  product (
+    id,
+    name,
+    description,
+    price,
+    weight,
+    category_id,
+    supplier_id,
+    image_url
+  )
+values
+  (
+    3,
+    'Sport Hoodie',
+    'Hanorac sport UNDER ARMOUR pe negru / alb',
+    207.99,
+    1,
+    4,
+    4,
+    'https://cdn.aboutstatic.com/file/a0ba460b11752b569f911278a8593408?width=1200&height=1600&quality=75&bg=F4F4F5&trim=1'
+  );
+
+insert into
+  product (
+    id,
+    name,
+    description,
+    price,
+    weight,
+    category_id,
+    supplier_id,
+    image_url
+  )
+values
+  (
+    4,
+    'Televizor LED Smart LG 43UN81003LB, 4K Ultra HD, HDR, 108 cm',
+    'Televizor LED Smart LG 43UN81003LB, 4K Ultra HD, HDR, 108 cm',
+    2051.92,
+    12,
+    4,
+    4,
+    'https://lcdn.altex.ro/media/catalog/product/4/3/43_55UN81003LB_1_.jpg'
+  );
+
+-- Stock
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (1, 1, 20) on conflict do nothing;
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (1, 2, 30) on conflict do nothing;
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (1, 3, 200) on conflict do nothing;
+
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (2, 1, 20) on conflict do nothing;
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (2, 2, 30) on conflict do nothing;
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (2, 3, 200) on conflict do nothing;
+
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (3, 4, 1000) on conflict do nothing;
+
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (4, 2, 30) on conflict do nothing;
+
+insert into
+  stock (product_id, location_id, quantity)
+values
+  (4, 3, 25) on conflict do nothing;
+
+create sequence hibernate_sequence start 10;

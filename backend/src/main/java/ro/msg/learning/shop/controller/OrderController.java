@@ -20,7 +20,6 @@ public class OrderController {
     @PostMapping(value = "/api/orders")
     public List<OrderDTO> createOrder(
             @AuthenticationPrincipal @RequestBody OrderProductQuantityDTO orderProductQuantityDTO) {
-
         return orderService.saveOrders(orderProductQuantityDTO);
     }
 }

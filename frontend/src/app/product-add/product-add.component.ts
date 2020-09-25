@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Product } from '../core/models/product.model';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { AppState } from '../store/app.states';
-import { CreateProduct } from '../store/actions/product.actions';
+import { Router } from '@angular/router';
+import { ProductService } from '../core/services/product.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-product-add',
@@ -14,13 +13,27 @@ export class ProductAddComponent {
   product: Product = new Product();
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
-    private store: Store<AppState>
+    private productService: ProductService,
+    private snackBar: MatSnackBar
   ) {}
 
   saveProduct(product: Product) {
-    this.store.dispatch(new CreateProduct(product));
-    this.router.navigate(['..']);
+    this.productService.addProduct(product).subscribe(
+      () => {
+        this.snackBar
+          .open(`Product ${product.name} created`, 'Homepage', {
+            duration: 5000,
+          })
+          .onAction()
+          .subscribe(() => this.router.navigate(['..']));
+      },
+      (error) => {
+        console.log(error);
+        this.snackBar.open(`Couldn't create the product: ${error}`, undefined, {
+          duration: 5000,
+        });
+      }
+    );
   }
 }

@@ -24,7 +24,7 @@ public class ProductManagementService {
     private final SupplierRepository supplierRepository;
 
     @Transactional
-    public ProductDTO addProduct(ProductDTO productDTO){
+    public ProductDTO addProduct(ProductDTO productDTO) {
 
         String name = productDTO.getName();
         String description = productDTO.getDescription();
@@ -39,24 +39,24 @@ public class ProductManagementService {
     }
 
     @Transactional
-    public void removeProduct(Integer productId){
+    public void removeProduct(Integer productId) {
         Product product = productRepository.findById(productId).orElse(null);
         productRepository.delete(product);
     }
 
     @Transactional
-    public List<ProductDTO> getProducts(){
+    public List<ProductDTO> getProducts() {
         return productRepository.findAll()
-                     .stream().map(ProductDTO::ofEntity).collect(Collectors.toList());
+                                .stream().map(ProductDTO::ofEntity).collect(Collectors.toList());
     }
 
     @Transactional
-    public ProductDTO getProductById(Integer id){
+    public ProductDTO getProductById(Integer id) {
         return ProductDTO.ofEntity(Objects.requireNonNull(productRepository.findById(id).orElse(null)));
     }
 
     @Transactional
-    public void updateProduct(int productId, ProductDTO productDTO){
+    public void updateProduct(int productId, ProductDTO productDTO) {
 
         Product product = new Product();
         ProductCategory category = productCategoryRepository.findById(productDTO.getCategoryId()).orElse(null);

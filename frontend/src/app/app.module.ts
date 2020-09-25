@@ -32,6 +32,8 @@ import {
   MatDividerModule,
   MatProgressSpinnerModule,
   MatCardModule,
+  MatSelectModule,
+  MatSnackBarModule,
 } from '@angular/material';
 import { ProductListMenuComponent } from './product-list/product-list-menu/product-list-menu.component';
 import { CartEmptyWarningComponent } from './cart/cart-empty-warning/cart-empty-warning.component';
@@ -80,6 +82,8 @@ import { ProductEffects } from './store/effects/product.effects';
     MatDividerModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [ProductService, CartService, OrderService, AuthGuard],
   bootstrap: [AppComponent],

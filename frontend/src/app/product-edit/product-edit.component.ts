@@ -4,8 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/app.states';
 import { Observable } from 'rxjs';
-import { GetProduct, UpdateProduct } from '../store/actions/product.actions';
+import { GetProduct } from '../store/actions/product.actions';
 import { getSelectedProduct } from '../store/selectors/product.selectors';
+import { ProductService } from '../core/services/product.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-product-edit',
@@ -19,7 +21,9 @@ export class ProductEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private productService: ProductService,
+    private snackBar: MatSnackBar
   ) {
     this.product$ = this.store.select(getSelectedProduct);
   }
@@ -33,7 +37,21 @@ export class ProductEditComponent implements OnInit {
   }
 
   saveProduct(product: Product) {
-    this.store.dispatch(new UpdateProduct(product));
-    this.router.navigate(['..']);
+    this.productService.updateProduct(product).subscribe(
+      () => {
+        this.snackBar
+          .open(`Product ${product.name} updated`, 'Homepage', {
+            duration: 5000,
+          })
+          .onAction()
+          .subscribe(() => this.router.navigate(['..']));
+      },
+      (error) => {
+        console.log(error);
+        this.snackBar.open(`Couldn't update the product: ${error}`, undefined, {
+          duration: 5000,
+        });
+      }
+    );
   }
 }

@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class OrderDTO {
 
     private Integer id;
-    private Integer shippedFromId;
+    private LocationDTO shippedFrom;
     private Integer customerId;
     private String createdAt;
     private String addressCountry;
@@ -17,12 +17,12 @@ public class OrderDTO {
     private String addressCounty;
     private String addressStreetAddress;
 
-    public static OrderDTO ofEntity(Order order){
+    public static OrderDTO ofEntity(Order order) {
 
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setId(order.getId());
         orderDTO.setCustomerId(order.getCustomer().getId());
-        orderDTO.setShippedFromId(order.getShippedFrom().getId());
+        orderDTO.setShippedFrom(LocationDTO.ofEntity(order.getShippedFrom()));
         orderDTO.setAddressCity(order.getAddressCity());
         orderDTO.setAddressCountry(order.getAddressCountry());
         orderDTO.setAddressStreetAddress(order.getAddressStreetAddress());
