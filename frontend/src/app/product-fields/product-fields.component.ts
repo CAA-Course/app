@@ -24,7 +24,6 @@ export class ProductFieldsComponent {
   }
 
   doSave() {
-    console.log(this.product);
     this.saveProduct.emit(this.product);
   }
 }

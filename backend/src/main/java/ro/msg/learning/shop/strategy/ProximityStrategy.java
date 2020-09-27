@@ -45,28 +45,28 @@ public class ProximityStrategy implements StrategyInterface {
             final LocationStrategyModel[] proximityLocation = {null};
 
             stocks.forEach(stock -> {
-                        List<ProductAndQuantityDTO> productsFound = new ArrayList<>();
-                        order.getProducts().forEach(o -> {
-                                    if (o.getId().equals(stock.getStockId().getProductId()) &&
-                                            stock.getQuantity() >= o.getQuantity()
-                                    ) {
-                                        productRepository.findById(o.getId()).ifPresent(orderProduct -> {
-                                                    proximityLocation[0] = new LocationStrategyModel(location, orderProduct, o.getQuantity());
-                                                    proximityLocations.add(proximityLocation[0]);
-                                                    productsFound.add(o);
-                                                }
-                                                                                       );
-                                    }
-                                }
-                                                   );
-                        order.getProducts().removeAll(productsFound);
-                    }
-            );
+                               List<ProductAndQuantityDTO> productsFound = new ArrayList<>();
+                               order.getProducts().forEach(o -> {
+                                                               if (o.getId().equals(stock.getStockId().getProductId()) &&
+                                                                   stock.getQuantity() >= o.getQuantity()
+                                                               ) {
+                                                                   productRepository.findById(o.getId()).ifPresent(orderProduct -> {
+                                                                                                                       proximityLocation[0] = new LocationStrategyModel(location, orderProduct, o.getQuantity());
+                                                                                                                       proximityLocations.add(proximityLocation[0]);
+                                                                                                                       productsFound.add(o);
+                                                                                                                   }
+                                                                                                                  );
+                                                               }
+                                                           }
+                                                          );
+                               order.getProducts().removeAll(productsFound);
+                           }
+                          );
         }
 
-        if (proximityLocations.isEmpty() || proximityLocations.size() != numberOfOrders)
+        if (proximityLocations.isEmpty() || proximityLocations.size() != numberOfOrders) {
             throw new NoLocationException();
-        else {
+        } else {
             return proximityLocations;
         }
     }
@@ -76,19 +76,19 @@ public class ProximityStrategy implements StrategyInterface {
         List<String> locationList = new ArrayList<>();
 
         String orderAddress = order.getAddressCountry() + "," +
-                order.getAddressCounty() + "," +
-                order.getAddressCity() + "," +
-                order.getAddressStreetAddress();
+                              order.getAddressCounty() + "," +
+                              order.getAddressCity() + "," +
+                              order.getAddressStreetAddress();
 
         locationList.add(orderAddress);
 
         locationList.addAll(
-                locationRepository.findAll().stream()
-                        .map(location -> location.getAddressCountry() + "," +
-                                location.getAddressCounty() + "," +
-                                location.getAddressCity() + "," +
-                                location.getAddressStreetAddress())
-                        .collect(Collectors.toList()));
+            locationRepository.findAll().stream()
+                              .map(location -> location.getAddressCountry() + "," +
+                                               location.getAddressCounty() + "," +
+                                               location.getAddressCity() + "," +
+                                               location.getAddressStreetAddress())
+                              .collect(Collectors.toList()));
 
         DistanceResponseModel distanceResponse = getDistance(locationList);
         List<Long> distanceBetweenLocations = distanceResponse.getDistance();
@@ -106,7 +106,8 @@ public class ProximityStrategy implements StrategyInterface {
         String routeMatrixURL = routeMatrix.getUrl() + routeMatrix.getKey();
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<DistanceRequestModel> request = new HttpEntity<>(new DistanceRequestModel(locationList, true));
-        ResponseEntity<DistanceResponseModel> distanceResponse = restTemplate.exchange(routeMatrixURL, HttpMethod.POST, request, DistanceResponseModel.class);
+        ResponseEntity<DistanceResponseModel> distanceResponse = restTemplate
+            .exchange(routeMatrixURL, HttpMethod.POST, request, DistanceResponseModel.class);
         return distanceResponse.getBody();
     }
 }

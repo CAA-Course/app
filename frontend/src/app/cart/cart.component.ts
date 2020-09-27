@@ -45,12 +45,23 @@ export class CartComponent implements OnInit {
       };
       this.orderService.createOrder(order).subscribe(
         (data) => {
-          console.log(data);
           this.cartService.clearCart();
+
           this.snackBar
-            .open(`Order sent`, 'Homepage', {
-              duration: 5000,
-            })
+            .open(
+              data
+                .map(
+                  (result, index) =>
+                    `Product ${index + 1} will be delivered from ${
+                      result.shippedFrom.addressCity
+                    }`
+                )
+                .join(', '),
+              'Homepage',
+              {
+                duration: 8000,
+              }
+            )
             .onAction()
             .subscribe(() => this.router.navigate(['..']));
         },
