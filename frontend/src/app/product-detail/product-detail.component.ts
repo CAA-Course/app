@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
     private cartService: CartService,
     private store: Store<AppState>,
     private snackBar: MatSnackBar,
-    private authenticationService: AuthenticationService
+    public authenticationService: AuthenticationService
   ) {
     this.product$ = this.store.select(getSelectedProduct);
   }

@@ -6,7 +6,7 @@
       <button
         mat-raised-button
         color="primary"
-        *ngIf="authenticationService.isCustomer(user$ | async)"
+        *ngIf="authenticationService.isCustomer()"
         type="button"
         class="btn btn-lg btn-info btn-circle mr-2"
         (click)="addToCart()"
@@ -14,7 +14,7 @@
         <span i18n>Add to </span><i class="fa fa-shopping-cart"></i>
       </button>
       <a
-        *ngIf="authenticationService.isAdmin(user$ | async)"
+        *ngIf="authenticationService.isAdmin()"
         [routerLink]="['/product', actualProduct.id, 'edit']"
         ><button
           mat-raised-button
@@ -27,7 +27,7 @@
       <button
         mat-raised-button
         color="warn"
-        *ngIf="authenticationService.isAdmin(user$ | async)"
+        *ngIf="authenticationService.isAdmin()"
         type="button"
         class="btn btn-lg btn-danger btn-circle ml-2"
         data-toggle="modal"
@@ -36,7 +36,7 @@
         <span i18n>Delete</span>
       </button>
       <app-product-detail-delete-modal
-        *ngIf="authenticationService.isAdmin(user$ | async)"
+        *ngIf="authenticationService.isAdmin()"
         [product]="actualProduct"
         (deleteProduct)="deleteProduct()"
       >

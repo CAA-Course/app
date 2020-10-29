@@ -3,6 +3,7 @@ import { User } from '../models/user.model';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Credentials } from '../models/credentials.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,9 @@ export class AuthenticationService {
     const params = new HttpParams({ fromObject: credentials as any });
 
     return this.http
-      .post<any>(`/auth/login`, params.toString(), { headers })
+      .post<any>(`${environment.apiUrl}/auth/login`, params.toString(), {
+        headers,
+      })
       .pipe(
         map((authResult) => {
           let user: User = {

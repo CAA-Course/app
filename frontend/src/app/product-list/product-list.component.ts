@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
   products$: Observable<ProductHeader[] | null>;
 
   constructor(
-    private authenticationService: AuthenticationService,
+    public authenticationService: AuthenticationService,
     private store: Store<AppState>
   ) {
     this.user$ = this.store.select(selectAuthState);

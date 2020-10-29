@@ -5,12 +5,13 @@ import { ProductHeader } from '../models/product-header.model';
 import { Product } from '../models/product.model';
 import { Category } from '../models/category.model';
 import { Supplier } from '../models/supplier.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private productURL = '/api/products';
+  private productURL = `${environment.apiUrl}/api/products`;
 
   constructor(private httpClient: HttpClient) {}
 
