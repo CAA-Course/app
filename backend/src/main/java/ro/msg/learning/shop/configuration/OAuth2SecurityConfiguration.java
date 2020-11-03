@@ -18,10 +18,12 @@ import org.springframework.security.config.annotation.web.configurers.oauth2.ser
 public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests(authZ -> authZ.antMatchers("/api/**")
+        http.cors().and()
+            .authorizeRequests(authZ -> authZ.antMatchers("/api/**")
                                              .authenticated()
                                              .antMatchers(HttpMethod.GET, "/**")
                                              .permitAll())
-            .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+            .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+            .cors();
     }
 }
