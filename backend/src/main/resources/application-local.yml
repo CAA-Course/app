@@ -22,12 +22,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/auth/realms/caacourse
-          jwk-set-uri: http://localhost:8080/auth/realms/caacourse/protocol/openid-connect/certs
 
 # Strategy Pattern -> possible values are 'single location', 'most abundant' and 'proximity'
 strategy: proximity
