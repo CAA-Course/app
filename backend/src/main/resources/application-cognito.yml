@@ -6,16 +6,11 @@ ro:
           key: TrBIVkFCj32FLA7CX0Dyyfls0sbD6mab
           url: http://www.mapquestapi.com/directions/v2/routematrix?key=
 
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:8080/auth/user/me
-
 spring:
   datasource:
-    password: ${POSTGRES_PASSWORD}
-    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/postgres
-    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD:postgres}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/postgres
+    username: ${POSTGRES_USER:postgres}
   flyway:
     clean-on-validation-error: true
     enabled: true
@@ -26,7 +21,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_LBgyq455E/.well-known/jwks.json
+          issuer-uri: ${OAUTH_ISSUER_URL}
 
 # Strategy Pattern -> possible values are 'single location', 'most abundant' and 'proximity'
 strategy: proximity
