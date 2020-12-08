@@ -44,6 +44,7 @@ import { AuthEffects } from './store/effects/auth.effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/app.states';
 import { ProductEffects } from './store/effects/product.effects';
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { ProductEffects } from './store/effects/product.effects';
     HeaderComponent,
   ],
   imports: [
+    AmplifyUIAngularModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

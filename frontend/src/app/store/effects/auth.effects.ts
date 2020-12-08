@@ -24,7 +24,7 @@ export class AuthEffects {
     ofType<LogIn>(AuthActionTypes.LOGIN),
     map((action: LogIn) => action.payload),
     switchMap((payload) => {
-      return this.authService.login(payload).pipe(
+      return this.authService.loginWithCognito(payload).then(
         map(() => new LogInSuccess({ credentials: payload.credentials })),
         catchError((error) => {
           return of(new LogInFailure({ error: error }));

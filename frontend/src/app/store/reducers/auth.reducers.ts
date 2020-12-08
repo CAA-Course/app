@@ -7,7 +7,7 @@ export function reducer(state = initialAuthState, action: All): AuthState {
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload.user,
+        user: action.payload,
         errorMessage: null,
       };
     }

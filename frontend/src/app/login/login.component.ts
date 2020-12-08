@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Credentials } from '../core/models/credentials.model';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { selectAuthState } from '../store/app.states';
-import { LogIn } from '../store/actions/user.actions';
-import { AuthState } from '../store/states/auth.states';
+// import { Observable } from 'rxjs';
+// import { selectAuthState } from '../store/app.states';
+// import { LogIn } from '../store/actions/user.actions';
+// import { AuthState } from '../store/states/auth.states';
+import {
+  onAuthUIStateChange,
+  CognitoUserInterface,
+  AuthState,
+} from '@aws-amplify/ui-components';
+import { LogInSuccess } from '../store/actions/user.actions';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +18,27 @@ import { AuthState } from '../store/states/auth.states';
 })
 export class LoginComponent {
   credentials: Credentials = new Credentials();
-  users$: Observable<AuthState>;
-  errorMessage: string | null;
+  user: CognitoUserInterface | undefined;
+  authState: AuthState;
 
-  constructor(private store: Store<AuthState>) {
-    this.users$ = this.store.select(selectAuthState);
+  constructor(
+    private ref: ChangeDetectorRef,
+    private store: Store<AuthState>
+  ) {}
+
+  ngOnInit() {
+    onAuthUIStateChange((authState, authData) => {
+      this.authState = authState;
+      this.user = authData as CognitoUserInterface;
+      console.log(this.user);
+      if (this.user) {
+        this.store.dispatch(new LogInSuccess(this.user));
+      }
+      this.ref.detectChanges();
+    });
   }
 
-  login(credentials: Credentials): void {
-    this.store.dispatch(new LogIn(credentials));
+  ngOnDestroy() {
+    return onAuthUIStateChange;
   }
 }
