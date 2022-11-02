@@ -15,10 +15,7 @@ export class OrderService {
   createOrder(order: Order): Observable<OrderResult[]> {
     return this.httpClient.post<OrderResult[]>(
       `${environment.apiUrl}${this.orderURL}`,
-      order,
-      {
-        withCredentials: true,
-      }
+      order
     );
   }
 }

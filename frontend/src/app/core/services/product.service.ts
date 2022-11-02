@@ -16,51 +16,33 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
   getProducts(): Observable<ProductHeader[]> {
-    return this.httpClient.get<Array<ProductHeader>>(this.productURL, {
-      withCredentials: true,
-    });
+    return this.httpClient.get<Array<ProductHeader>>(this.productURL);
   }
 
   getProduct(id: number): Observable<Product> {
-    return this.httpClient.get<Product>(this.productURL + '/' + id, {
-      withCredentials: true,
-    });
+    return this.httpClient.get<Product>(this.productURL + '/' + id);
   }
 
   addProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(this.productURL, product, {
-      withCredentials: true,
-    });
+    return this.httpClient.post<Product>(this.productURL, product);
   }
 
   updateProduct(product: Product): Observable<Product> {
     return this.httpClient.put<Product>(
       this.productURL + '/' + product.id,
-      product,
-      {
-        withCredentials: true,
-      }
+      product
     );
   }
 
   deleteProduct(id: number): Observable<{}> {
-    return this.httpClient.delete(this.productURL + '/' + id, {
-      withCredentials: true,
-    });
+    return this.httpClient.delete(this.productURL + '/' + id);
   }
 
   getCategories(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(
-      `${this.productURL}/api/categories`,
-      {
-        withCredentials: true,
-      }
-    );
+    return this.httpClient.get<Category[]>(`${this.productURL}/api/categories`);
   }
 
   getSuppliers(): Observable<Supplier[]> {
-    return this.httpClient.get<Supplier[]>(`${this.productURL}/api/suppliers`, {
-      withCredentials: true,
-    });
+    return this.httpClient.get<Supplier[]>(`${this.productURL}/api/suppliers`);
   }
 }
