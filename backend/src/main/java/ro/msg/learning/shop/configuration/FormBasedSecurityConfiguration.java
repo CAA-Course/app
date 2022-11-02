@@ -15,11 +15,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import ro.msg.learning.shop.service.CustomerDetailsService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Slf4j
 @Configuration
@@ -33,7 +39,7 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         log.info("Using form based auth");
-        httpSecurity.cors().and()
+        httpSecurity.cors(withDefaults())
                 .csrf()
                 .disable()
                 .headers()
@@ -68,6 +74,17 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
                 .logout()
                 .logoutUrl("/auth/logout")
                 .logoutSuccessHandler((req, res, a) -> res.setStatus(200));
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedOrigin("*");
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 
     private void sendError(HttpServletResponse response, int code, AuthenticationException e) {
