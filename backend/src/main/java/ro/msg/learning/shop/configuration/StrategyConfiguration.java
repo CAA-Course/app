@@ -31,18 +31,18 @@ public class StrategyConfiguration {
         switch (strategy) {
             case "single location":
                 return new SingleLocationStrategy(stockRepository,
-                                                  locationRepository,
-                                                  productRepository);
+                        locationRepository,
+                        productRepository);
 
             case "most abundant":
                 return new MostAbundantStrategy(locationRepository,
-                                                stockRepository,
-                                                productRepository);
+                        stockRepository,
+                        productRepository);
 
             case "proximity":
                 return new ProximityStrategy(routeMatrix, locationRepository,
-                                             stockRepository,
-                                             productRepository);
+                        stockRepository,
+                        productRepository);
 
             default:
                 throw new NoStrategyException();

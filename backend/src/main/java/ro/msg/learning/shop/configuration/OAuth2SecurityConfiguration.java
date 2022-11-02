@@ -19,11 +19,10 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
-            .authorizeRequests(authZ -> authZ.antMatchers("/api/**")
-                                             .authenticated()
-                                             .antMatchers(HttpMethod.GET, "/**")
-                                             .permitAll())
-            .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-            .cors();
+                .authorizeRequests(authZ -> authZ.antMatchers("/api/**")
+                        .authenticated()
+                        .antMatchers(HttpMethod.GET, "/**")
+                        .permitAll())
+                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
     }
 }

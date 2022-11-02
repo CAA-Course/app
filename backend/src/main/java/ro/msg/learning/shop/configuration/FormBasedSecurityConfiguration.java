@@ -33,41 +33,41 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         log.info("Using form based auth");
-        httpSecurity.csrf()
-                    .disable()
-                    .headers()
-                    .frameOptions()
-                    .disable()
-                    .and()
-                    .authorizeRequests()
+        httpSecurity.cors().and()
+                .csrf()
+                .disable()
+                .headers()
+                .frameOptions()
+                .disable()
+                .and()
+                .authorizeRequests()
 //                    .antMatchers("/api/**")
 //                    .authenticated()
-                    .antMatchers("/**")
-                    .permitAll()
-                    .and()
-                    .formLogin()
-                    .loginProcessingUrl("/auth/login")
-                    .usernameParameter("username")
-                    .passwordParameter("password")
-                    .failureHandler((req, res, e) -> sendError(res, 401, e))
-                    .successHandler((req, res, a) -> {
-                        res.setContentType("application/json");
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        res.getWriter()
-                           .write(objectMapper.writeValueAsString(
-                               a.getPrincipal()));
-                        res.setStatus(200);
-                    })
-                    .and()
-                    .exceptionHandling()
-                    .accessDeniedHandler((req, res, e) -> sendError(res, 403, e))
-                    .authenticationEntryPoint(
+                .antMatchers("/**")
+                .permitAll()
+                .and()
+                .formLogin()
+                .loginProcessingUrl("/auth/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .failureHandler((req, res, e) -> sendError(res, 401, e))
+                .successHandler((req, res, a) -> {
+                    res.setContentType("application/json");
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    res.getWriter()
+                            .write(objectMapper.writeValueAsString(
+                                    a.getPrincipal()));
+                    res.setStatus(200);
+                })
+                .and()
+                .exceptionHandling()
+                .accessDeniedHandler((req, res, e) -> sendError(res, 403, e))
+                .authenticationEntryPoint(
                         (req, res, e) -> sendError(res, 401, e))
-                    .and()
-                    .logout()
-                    .logoutUrl("/auth/logout")
-                    .logoutSuccessHandler((req, res, a) -> res.setStatus(200));
-        httpSecurity.cors();
+                .and()
+                .logout()
+                .logoutUrl("/auth/logout")
+                .logoutSuccessHandler((req, res, a) -> res.setStatus(200));
     }
 
     private void sendError(HttpServletResponse response, int code, AuthenticationException e) {
@@ -96,9 +96,9 @@ public class FormBasedSecurityConfiguration extends WebSecurityConfigurerAdapter
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
-        throws Exception {
+            throws Exception {
         auth.userDetailsService(customerDetailsService)
-            .passwordEncoder(passwordEncoder());
+                .passwordEncoder(passwordEncoder());
     }
 
     @Bean
